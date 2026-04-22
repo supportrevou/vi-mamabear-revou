@@ -1,221 +1,174 @@
-# 🐻 Mamabear E-commerce: Ringkasan Proyek 8 Minggu
+# 🐻 Mamabear E-commerce: 8-Week Project Overview
 
-## Selamat Datang!
+## Welcome!
 
-Dokumen ini menjelaskan rencana pembangunan website e-commerce Mamabear selama **8 minggu (2 bulan)**. Kami akan membangun website toko online yang lengkap, dari tampilan produk hingga sistem pembayaran.
+This document outlines the plan for building the Mamabear e-commerce website over **8 weeks (2 months)**. We will build a complete online store, from product displays to payment systems.
 
----
+### 🎯 MVP Approach (Minimum Viable Product)
 
-## 🎯 Apa yang Akan Dibangun?
+This project focuses on building an **MVP** - a fully functional online store with all essential features needed to start immediately.
 
-Website toko online lengkap yang memungkinkan Mamabear untuk:
+**What this means:**
+- We'll build all **core features** needed to run an e-commerce business
+- More **advanced features** (reviews, wishlists, loyalty programs, etc.) can be added in future batches
 
-✅ **Menjual produk secara online** tanpa tergantung marketplace  
-✅ **Menerima pembayaran** dari berbagai metode (transfer bank, e-wallet, kartu kredit)  
-✅ **Mengelola pesanan** dari pelanggan  
-✅ **Mengatur produk dan stok** dengan mudah  
-✅ **Mengirim barang** dengan berbagai ekspedisi (JNE, TIKI, POS, dll)  
-✅ **Melihat laporan penjualan** untuk memantau bisnis  
+Think of it as building a solid foundation first, then adding rooms to the house later based on what you actually need! 🏗️
 
 ---
 
-## 📅 Timeline: 8 Minggu (4 Sprint)
+## 🎯 What Will Be Built?
 
-Proyek dibagi menjadi **4 Sprint**, masing-masing **2 minggu**. Setiap Sprint menghasilkan fitur yang bisa dilihat dan diuji.
+A complete online store that enables Mamabear to:
+
+✅ **Sell products online** without depending on marketplaces  
+✅ **Accept payments** from various methods (bank transfer, e-wallet, credit card)  
+✅ **Manage customer orders**  
+✅ **Organize products and inventory** easily  
+✅ **Ship products** via multiple couriers (JNE, TIKI, POS, etc.)  
+✅ **View sales reports** to monitor business performance  
+
+---
+
+## 📅 Timeline: 8 Weeks (4 Sprints)
+
+The project is divided into **4 Sprints**, each lasting **2 weeks**. Each Sprint delivers features that can be viewed and tested.
 
 ```
-Minggu 1-2  →  Sprint 1: Fondasi Website
-Minggu 3-4  →  Sprint 2: Pencarian & Detail Produk
-Minggu 5-6  →  Sprint 3: Keranjang & Pembayaran
-Minggu 7-8  →  Sprint 4: Admin Panel & Peluncuran
+Week 1-2  →  Sprint 1: Website Foundation
+Week 3-4  →  Sprint 2: Search & Product Details
+Week 5-6  →  Sprint 3: Shopping Cart & Payment
+Week 7-8  →  Sprint 4: Admin Panel & Launch
 ```
 
 ---
 
-## 🚀 Sprint 1: Fondasi Website (Minggu 1-2)
+## 🚀 Sprint 1: Website Foundation (Week 1-2)
 
-### Apa yang Dibangun?
+### What Will Be Built?
 
-**Untuk Pelanggan:**
-- ✅ Halaman utama (Homepage) dengan tampilan produk
-- ✅ Menu navigasi (Beranda, Produk, Kategori, Kontak)
-- ✅ Sistem login dan registrasi pelanggan
-- ✅ Tampilan daftar produk (masih menggunakan data contoh)
+**For Customers:**
+- ✅ Homepage with product displays
+- ✅ Navigation menu (Home, Products, Categories, Contact)
+- ✅ Customer login and registration system (using sample data)
+- ✅ Product listing page (using sample data)
 
-**Untuk Admin (Backend):**
-- ✅ Database untuk menyimpan data produk dan pelanggan
-- ✅ Sistem keamanan (password terenkripsi, login aman)
-- ✅ API untuk menambah, edit, dan hapus produk
+**For Admin (Backend):**
+- ✅ Database to store product and customer data
+- ✅ Security system (encrypted passwords, secure login)
+- ✅ API to add, edit, and delete products
 
-### Yang Bisa Dilihat di Akhir Sprint 1:
-- Website sudah bisa dibuka di browser
-- Pelanggan bisa registrasi dan login
-- Tampilan produk sudah ada (walaupun masih data contoh)
-- Admin sudah bisa menambah produk lewat sistem
+### What You'll See at the End of Sprint 1:
+- Website can be opened in browser
+- Customers can register and login using sample data
+- Product displays are visible (though still sample data)
 
-### Pertemuan dengan Mamabear:
-📅 **Review Sprint 1** - Kami akan demo website dan minta feedback
-
----
-
-## 🔍 Sprint 2: Pencarian & Detail Produk (Minggu 3-4)
-
-### Apa yang Dibangun?
-
-**Untuk Pelanggan:**
-- ✅ Halaman detail produk (foto produk, deskripsi, harga, varian)
-- ✅ Galeri foto produk (bisa zoom dan lihat dari berbagai sudut)
-- ✅ Fitur pencarian produk (cari berdasarkan nama)
-- ✅ Filter produk (berdasarkan kategori, harga, ketersediaan)
-- ✅ Halaman kategori produk
-
-**Untuk Admin (Backend):**
-- ✅ Upload foto produk ke cloud storage
-- ✅ Sistem kategori produk (bisa buat kategori dan sub-kategori)
-- ✅ Sistem varian produk (ukuran, warna, dll)
-- ✅ Pencarian dan filter yang cepat
-
-### Yang Bisa Dilihat di Akhir Sprint 2:
-- Pelanggan bisa mencari dan menemukan produk dengan mudah
-- Halaman detail produk sudah lengkap dengan foto dan informasi
-- Foto produk sudah real (bukan placeholder)
-- Sistem kategori sudah berfungsi
-
-### Pertemuan dengan Mamabear:
-📅 **Review Sprint 2** - Demo fitur pencarian dan detail produk
+### Meeting with Mamabear:
+📅 **Sprint 1 Review** - We will demo the website and gather feedback
 
 ---
 
-## 🛒 Sprint 3: Keranjang & Pembayaran (Minggu 5-6)
+## 🔍 Sprint 2: Search & Product Details (Week 3-4)
 
-### Apa yang Dibangun?
+### What Will Be Built?
 
-**Untuk Pelanggan:**
-- ✅ Keranjang belanja (tambah, ubah jumlah, hapus produk)
-- ✅ Halaman checkout (isi alamat pengiriman)
-- ✅ Pilih ekspedisi (JNE, TIKI, POS) dengan harga otomatis
-- ✅ Pilih metode pembayaran (transfer bank, e-wallet, kartu kredit)
-- ✅ Konfirmasi pesanan dan nomor invoice
-- ✅ Halaman riwayat pesanan
-- ✅ Email notifikasi otomatis
+**For Customers:**
+- ✅ Product detail page (photos, description, price, variants)
+- ✅ Product photo gallery (zoom and view from multiple angles)
+- ✅ Product search feature (search by name)
+- ✅ Product filters (by category, price, availability)
+- ✅ Category pages
 
-**Untuk Admin (Backend):**
-- ✅ Integrasi dengan RajaOngkir (hitung ongkir otomatis)
-- ✅ Integrasi dengan Midtrans/Xendit (payment gateway)
-- ✅ Sistem pesanan (order management)
-- ✅ Pengurangan stok otomatis saat ada pesanan
-- ✅ Sistem email otomatis
+**For Admin (Backend):**
+- ✅ Upload product photos to cloud storage
+- ✅ Product category system (create categories and sub-categories)
+- ✅ Product variant system (size, color, etc.)
+- ✅ Fast search and filtering
 
-### Yang Bisa Dilihat di Akhir Sprint 3:
-- **Pelanggan sudah bisa belanja dari awal sampai akhir!**
-- Keranjang belanja berfungsi
-- Ongkir dihitung otomatis sesuai alamat
-- Pembayaran bisa dilakukan (masih mode testing)
-- Pelanggan dapat email konfirmasi pesanan
-- Stok produk berkurang otomatis
+### What You'll See at the End of Sprint 2:
+- Customers can easily search and find products
+- Product detail pages are complete with photos and information
+- Product photos are real (no longer placeholders)
+- Category system is functional
 
-### Pertemuan dengan Mamabear:
-📅 **Review Sprint 3** - Demo proses belanja lengkap dari awal sampai pembayaran
+### Meeting with Mamabear:
+📅 **Sprint 2 Review** - Demo search features and product details
 
 ---
 
-## 🎯 Sprint 4: Admin Panel & Peluncuran (Minggu 7-8)
+## 🛒 Sprint 3: Shopping Cart & Payment (Week 5-6)
 
-### Apa yang Dibangun?
+### What Will Be Built?
 
-**Untuk Admin:**
-- ✅ Dashboard admin (lihat ringkasan penjualan, pesanan, produk)
-- ✅ Kelola produk (tambah, edit, hapus produk dengan mudah)
-- ✅ Kelola pesanan (update status, tambah nomor resi)
-- ✅ Kelola kategori
-- ✅ Lihat daftar pelanggan
-- ✅ Laporan penjualan (harian, mingguan, bulanan)
-- ✅ Export data ke Excel/CSV
-- ✅ Cetak invoice dan packing slip
+**For Customers:**
+- ✅ Shopping cart (add, update quantity, remove products)
+- ✅ Checkout page (enter shipping address)
+- ✅ Choose courier (JNE, TIKI, POS) with automatic pricing
+- ✅ Choose payment method (bank transfer, e-wallet, credit card)
+- ✅ Order confirmation and invoice number
+- ✅ Order history page
+- ✅ Automatic email notifications
 
-**Optimasi & Peluncuran:**
-- ✅ Tampilan mobile-friendly (sempurna di HP dan tablet)
-- ✅ Optimasi SEO (agar mudah ditemukan di Google)
-- ✅ Perbaikan bug dan testing menyeluruh
-- ✅ Upload ke server production (website live!)
-- ✅ Setup domain (www.mamabear.com atau sesuai pilihan)
-- ✅ SSL certificate (website aman dengan https)
+**For Admin (Backend):**
+- ✅ Integration with RajaOngkir (automatic shipping cost calculation)
+- ✅ Integration with Midtrans/Xendit (payment gateway)
+- ✅ Order management system
+- ✅ Automatic stock reduction when orders are placed
 
-### Yang Bisa Dilihat di Akhir Sprint 4:
-- **Website sudah LIVE dan bisa diakses publik!**
-- Admin panel lengkap untuk kelola toko
-- Laporan penjualan tersedia
-- Website tampil sempurna di HP, tablet, dan komputer
-- Website aman (https) dan cepat
+### What You'll See at the End of Sprint 3:
+- **Customers can complete the entire shopping process!**
+- Shopping cart is functional
+- Shipping costs calculated automatically based on address
+- Payments can be processed (still in sandbox mode)
+- Product stock reduces automatically
 
-### Pertemuan dengan Mamabear:
-📅 **Review Sprint 4 & Training** - Demo admin panel dan pelatihan cara menggunakan
-📅 **Peluncuran Website** - Website resmi online! 🎉
+### Meeting with Mamabear:
+📅 **Sprint 3 Review** - Demo complete shopping process from start to payment
 
 ---
 
-## 👥 Siapa yang Terlibat?
+## 🎯 Sprint 4: Admin Panel & Launch (Week 7-8)
 
-Untuk membangun website ini, dibutuhkan tim developer:
+### What Will Be Built?
 
-| Peran | Tugas |
-|-------|-------|
-| **Front-End Developer** | Membuat tampilan website yang dilihat pelanggan |
-| **Back-End Developer** | Membuat sistem di belakang layar (database, API, integrasi) |
-| **Project Manager** | Koordinasi tim, komunikasi dengan Mamabear, pastikan sesuai jadwal |
+**For Admin:**
+- ✅ Admin dashboard (view sales summary, orders, products)
+- ✅ Manage products (add, edit, delete products easily)
+- ✅ Manage orders (update status, add tracking numbers)
+- ✅ Manage categories
+- ✅ View customer list
+- ✅ Sales reports (daily, weekly, monthly)
+- ✅ Print invoices and packing slips
 
----
+### What You'll See at the End of Sprint 4:
+- Website is live
+- Complete admin panel to manage the store
+- Sales reports available
+- Website displays perfectly on phones, tablets, and computers
 
-## 📱 Fitur-Fitur Utama Website
-
-### Untuk Pelanggan:
-1. **Browsing Produk**
-   - Lihat semua produk
-   - Cari produk berdasarkan nama
-   - Filter berdasarkan kategori dan harga
-   - Lihat detail produk lengkap
-
-2. **Belanja**
-   - Tambah produk ke keranjang
-   - Checkout dengan mudah
-   - Pilih ekspedisi dan lihat ongkir
-   - Bayar dengan berbagai metode
-
-3. **Akun Pelanggan**
-   - Registrasi dan login
-   - Lihat riwayat pesanan
-   - Simpan alamat pengiriman
-   - Track status pesanan
-
-### Untuk Admin Mamabear:
-1. **Dashboard**
-   - Lihat ringkasan penjualan hari ini
-   - Lihat pesanan terbaru
-   - Alert produk stok menipis
-
-2. **Kelola Produk**
-   - Tambah produk baru dengan foto
-   - Edit informasi produk
-   - Atur stok dan harga
-   - Atur kategori
-
-3. **Kelola Pesanan**
-   - Lihat semua pesanan
-   - Update status pesanan
-   - Tambah nomor resi
-   - Cetak invoice
-
-4. **Laporan**
-   - Laporan penjualan
-   - Produk terlaris
-   - Data pelanggan
-   - Export ke Excel 
+### Meeting with Mamabear:
+📅 **Sprint 4 Review** - Demo admin panel
 
 ---
 
-## 📞 Komunikasi Selama Proyek
+## 👥 Who's Involved?
 
-### Pertemuan Rutin:
-- **Setiap 2 Minggu:** Sprint Review (demo hasil kerja)
+To build this website, a development team is needed:
+
+| Role | Responsibilities |
+|------|------------------|
+| **Front-End Developer** | Creates the website interface that customers see |
+| **Back-End Developer** | Creates the behind-the-scenes system (database, API, integrations) |
+| **Project Manager (SDC)** | Coordinates team, communicates with Mamabear, ensures schedule adherence |
 
 ---
+
+## 📞 Communication During the Project
+
+### Regular Meetings:
+- **Every 2 Weeks:** Sprint Review (demo of work completed)
+- **Daily:** Progress updates via WhatsApp/Slack (optional)
+- **Anytime:** Contact the team with questions
+
+---
+
+**Let's start building Mamabear's online store! 🐻💪**
