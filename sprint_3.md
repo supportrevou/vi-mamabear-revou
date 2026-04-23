@@ -20,6 +20,244 @@
 
 ---
 
+## 👥 User Stories
+
+### Customer User Stories
+
+**US-3.1: Add Products to Cart**
+- **As a** customer
+- **I want to** add products to my shopping cart
+- **So that** I can purchase multiple items at once
+
+**Acceptance Criteria:**
+- "Add to Cart" button visible on product detail page
+- User can select quantity before adding to cart
+- Stock validation prevents adding more than available
+- Success notification shown when item added
+- Cart icon badge updates with item count
+- Cart persists for logged-in users across sessions
+- Guest cart saved in localStorage
+
+---
+
+**US-3.2: Manage Shopping Cart**
+- **As a** customer
+- **I want to** view and modify items in my cart
+- **So that** I can review my order before checkout
+
+**Acceptance Criteria:**
+- Cart page displays all cart items with images, names, variants, and prices
+- User can update item quantities
+- User can remove items from cart
+- User can clear entire cart
+- Cart subtotal updates in real-time
+- Out-of-stock items are highlighted
+- Empty cart state shows message and CTA to browse products
+
+---
+
+**US-3.3: Complete Checkout**
+- **As a** customer
+- **I want to** complete the checkout process
+- **So that** I can purchase the items in my cart
+
+**Acceptance Criteria:**
+- Multi-step checkout flow (Shipping → Shipping Method → Payment → Review)
+- Progress indicator shows current step
+- User can enter/select shipping address
+- User can select shipping method with cost and delivery estimate
+- User can select payment method
+- Order review shows complete order summary
+- Terms and conditions checkbox required
+- "Place Order" button creates order and initiates payment
+
+---
+
+**US-3.4: Calculate Shipping Cost**
+- **As a** customer
+- **I want to** see shipping costs for different courier options
+- **So that** I can choose the best shipping method for my needs
+
+**Acceptance Criteria:**
+- Shipping costs calculated based on destination and weight
+- Multiple courier options displayed (JNE, TIKI, POS, etc.)
+- Each option shows cost and estimated delivery time
+- Different service types available (Regular, Express)
+- Shipping cost included in order total
+- Loading state shown while fetching shipping rates
+
+---
+
+**US-3.5: Make Payment**
+- **As a** customer
+- **I want to** pay for my order using various payment methods
+- **So that** I can complete my purchase conveniently
+
+**Acceptance Criteria:**
+- Multiple payment methods available (Bank Transfer, E-wallets, Credit Card, etc.)
+- Payment instructions clearly displayed
+- Payment gateway integration working (Midtrans/Xendit)
+- Payment status tracked and updated
+- User redirected to confirmation page after payment initiation
+- Payment expiration time displayed
+
+---
+
+**US-3.6: Receive Order Confirmation**
+- **As a** customer
+- **I want to** receive confirmation of my order
+- **So that** I have proof of purchase and order details
+
+**Acceptance Criteria:**
+- Order confirmation page displays after order placement
+- Order number prominently displayed
+- Complete order details shown (items, shipping, payment)
+- Payment instructions provided (if applicable)
+- Confirmation email sent to customer
+- "Track Order" and "Continue Shopping" buttons available
+
+---
+
+**US-3.7: View Order History**
+- **As a** customer
+- **I want to** view my past orders
+- **So that** I can track deliveries and reference previous purchases
+
+**Acceptance Criteria:**
+- Order history page lists all customer orders
+- Each order shows order number, date, status, and total
+- Orders can be filtered by status
+- User can search by order number
+- "View Details" button opens order detail page
+- Order detail page shows complete order information
+
+---
+
+**US-3.8: Track Order**
+- **As a** customer
+- **I want to** track my order status and shipment
+- **So that** I know when to expect delivery
+
+**Acceptance Criteria:**
+- Order detail page shows current order status
+- Tracking number displayed when order is shipped
+- Order timeline shows status history
+- Estimated delivery date shown
+- Status updates: Pending → Paid → Processing → Shipped → Delivered
+
+---
+
+**US-3.9: Cancel Order**
+- **As a** customer
+- **I want to** cancel my order before it ships
+- **So that** I can change my mind or correct mistakes
+
+**Acceptance Criteria:**
+- "Cancel Order" button available on order detail page
+- Cancellation only allowed for pending/paid orders
+- Confirmation modal before cancellation
+- Order status updated to "Cancelled"
+- Inventory restored for cancelled items
+- Cancellation email sent to customer
+
+---
+
+### Admin User Stories
+
+**US-3.10: View All Orders**
+- **As an** admin
+- **I want to** view all customer orders
+- **So that** I can manage order fulfillment
+
+**Acceptance Criteria:**
+- Admin order list page shows all orders
+- Orders can be filtered by status, date, payment status
+- Orders can be searched by order number or customer name
+- Order list shows key information (order number, customer, date, total, status)
+- Pagination for large order lists
+- Export orders to CSV
+
+---
+
+**US-3.11: Update Order Status**
+- **As an** admin
+- **I want to** update order status
+- **So that** customers are informed about their order progress
+
+**Acceptance Criteria:**
+- Admin can change order status from order detail page
+- Status options: Pending, Paid, Processing, Shipped, Delivered, Cancelled
+- Admin can add notes when updating status
+- Email notification sent to customer on status change
+- Status change logged in order history
+- Tracking number can be added when marking as shipped
+
+---
+
+### Developer User Stories
+
+**US-3.12: Integrate Payment Gateway**
+- **As a** developer
+- **I want to** integrate a payment gateway
+- **So that** customers can make secure online payments
+
+**Acceptance Criteria:**
+- Midtrans/Xendit payment gateway integrated
+- Multiple payment methods supported
+- Payment webhook handler implemented
+- Webhook signature verification working
+- Payment status updates order status
+- Payment transactions logged
+- Sandbox testing completed
+
+---
+
+**US-3.13: Integrate Shipping API**
+- **As a** developer
+- **I want to** integrate RajaOngkir shipping API
+- **So that** customers can see real-time shipping costs
+
+**Acceptance Criteria:**
+- RajaOngkir API integrated
+- Shipping cost calculation working
+- Multiple couriers supported
+- Province and city data available
+- Shipping rates cached (short TTL)
+- Error handling for API failures
+- API response time < 2 seconds
+
+---
+
+**US-3.14: Implement Inventory Management**
+- **As a** developer
+- **I want to** implement inventory tracking
+- **So that** stock levels are accurate and overselling is prevented
+
+**Acceptance Criteria:**
+- Stock reduced when order is created
+- Stock restored when order is cancelled
+- Stock validation before order creation
+- Low stock alerts for admin
+- Prevent adding out-of-stock items to cart
+- Database transactions ensure data consistency
+
+---
+
+**US-3.15: Set Up Email Notifications**
+- **As a** developer
+- **I want to** implement email notification system
+- **So that** customers receive order updates
+
+**Acceptance Criteria:**
+- Email service configured (SendGrid/AWS SES)
+- Email templates created (order confirmation, payment, shipping, etc.)
+- Emails sent asynchronously (queue system)
+- Email sending errors logged
+- Email delivery tracked
+- Unsubscribe option included
+
+---
+
 ## 📋 Sprint Backlog
 
 ### Front-End Development Tasks

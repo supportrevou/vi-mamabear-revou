@@ -23,6 +23,267 @@
 
 ---
 
+## 👥 User Stories
+
+### Admin User Stories
+
+**US-4.1: View Dashboard Overview**
+- **As an** admin
+- **I want to** see key business metrics at a glance
+- **So that** I can monitor business performance
+
+**Acceptance Criteria:**
+- Dashboard displays total sales, order count, customer count, and product count
+- Sales chart shows revenue trends (daily/weekly/monthly)
+- Recent orders table shows latest 10 orders
+- Low stock alerts displayed
+- Top selling products shown
+- Dashboard is responsive on all devices
+
+---
+
+**US-4.2: Manage Products (Advanced)**
+- **As an** admin
+- **I want to** efficiently manage all products
+- **So that** I can keep the product catalog up-to-date
+
+**Acceptance Criteria:**
+- Product list page with search, filter, and sort
+- Bulk actions (delete, publish/unpublish)
+- Product create/edit form with all fields
+- Multiple image upload with drag-and-drop reordering
+- Variant management interface
+- CSV import/export functionality
+- Product duplication feature
+- SEO fields for each product
+
+---
+
+**US-4.3: Manage Orders (Advanced)**
+- **As an** admin
+- **I want to** efficiently process and manage orders
+- **So that** customers receive their orders on time
+
+**Acceptance Criteria:**
+- Order list with advanced filtering and search
+- Quick status update from list view
+- Detailed order view with all information
+- Add tracking number functionality
+- Print invoice and packing slip
+- Order timeline showing status history
+- Bulk status updates
+- Export orders to CSV
+
+---
+
+**US-4.4: Manage Categories**
+- **As an** admin
+- **I want to** organize products into categories
+- **So that** customers can easily browse products
+
+**Acceptance Criteria:**
+- Category list with hierarchical tree view
+- Drag-and-drop category reordering
+- Create/edit category form
+- Category image upload
+- Parent category selection
+- SEO fields for categories
+- Activate/deactivate categories
+
+---
+
+**US-4.5: View Sales Reports**
+- **As an** admin
+- **I want to** view sales reports and analytics
+- **So that** I can make informed business decisions
+
+**Acceptance Criteria:**
+- Sales report with date range selector
+- Total sales, order count, and average order value displayed
+- Sales chart (line/bar chart)
+- Sales breakdown by category
+- Sales breakdown by product
+- Top selling products report
+- Export reports to CSV/PDF
+- Data visualization with interactive charts
+
+---
+
+**US-4.6: Manage Customers**
+- **As an** admin
+- **I want to** view customer information
+- **So that** I can provide better customer service
+
+**Acceptance Criteria:**
+- Customer list with search and filter
+- Customer detail page with order history
+- Total spent and average order value per customer
+- Customer registration date
+- Saved addresses
+- Export customer list to CSV
+
+---
+
+**US-4.7: Control Admin Access**
+- **As a** super admin
+- **I want to** manage admin user accounts
+- **So that** I can control who has access to the admin panel
+
+**Acceptance Criteria:**
+- Create new admin users
+- Assign roles (admin, super admin)
+- View list of all admin users
+- Deactivate/delete admin users
+- Admin activity logging
+- Prevent self-role-change
+- Prevent deleting last super admin
+
+---
+
+**US-4.8: Configure Site Settings**
+- **As an** admin
+- **I want to** configure site-wide settings
+- **So that** I can customize the store
+
+**Acceptance Criteria:**
+- Settings page with organized sections
+- Update site name and description
+- Configure contact information
+- Set social media links
+- Configure shipping origin address
+- Set tax rate and currency
+- Update email settings
+- Configure payment gateway settings
+- Enable/disable maintenance mode
+
+---
+
+### Customer User Stories
+
+**US-4.9: Mobile Shopping Experience**
+- **As a** mobile customer
+- **I want to** have a smooth shopping experience on my phone
+- **So that** I can shop conveniently anywhere
+
+**Acceptance Criteria:**
+- All pages are fully responsive on mobile devices
+- Touch-friendly interface (minimum 44x44px tap targets)
+- Mobile-optimized navigation (hamburger menu)
+- Fast page load times on mobile
+- Mobile-friendly forms and checkout
+- Images optimized for mobile
+- Tested on iOS and Android devices
+
+---
+
+**US-4.10: Discover Store via Search Engines**
+- **As a** potential customer
+- **I want to** find the store through search engines
+- **So that** I can discover products I'm looking for
+
+**Acceptance Criteria:**
+- SEO meta tags on all pages
+- Unique title and description for each product
+- Open Graph tags for social sharing
+- Structured data (Schema.org) implemented
+- Sitemap.xml generated and submitted
+- Robots.txt configured
+- Fast page load speed (Lighthouse score > 90)
+- Google Analytics tracking implemented
+
+---
+
+### Developer User Stories
+
+**US-4.11: Deploy to Production**
+- **As a** developer
+- **I want to** deploy the application to production
+- **So that** it's accessible to customers
+
+**Acceptance Criteria:**
+- Production database set up and migrated
+- Backend deployed to production server
+- Frontend deployed to Vercel
+- Environment variables configured
+- Domain configured and pointing to application
+- SSL certificate installed and working
+- HTTPS enforced
+- Monitoring and logging set up
+
+---
+
+**US-4.12: Ensure Application Security**
+- **As a** developer
+- **I want to** implement security best practices
+- **So that** customer data is protected
+
+**Acceptance Criteria:**
+- Security audit completed
+- All security headers implemented
+- HTTPS enforced in production
+- Input validation on all endpoints
+- SQL injection prevention verified
+- XSS protection implemented
+- CORS properly configured
+- Rate limiting enabled
+- Security monitoring set up
+
+---
+
+**US-4.13: Monitor Application Performance**
+- **As a** developer
+- **I want to** monitor application performance and errors
+- **So that** I can quickly identify and fix issues
+
+**Acceptance Criteria:**
+- Error tracking set up (Sentry or similar)
+- Server health monitoring configured
+- Database performance monitoring
+- API endpoint monitoring
+- Alerts configured for critical issues
+- Log aggregation set up
+- Performance metrics tracked
+
+---
+
+**US-4.14: Document the System**
+- **As a** developer
+- **I want to** have comprehensive documentation
+- **So that** future maintenance and updates are easier
+
+**Acceptance Criteria:**
+- API documentation complete and up-to-date
+- Database schema documented
+- Architecture documentation created
+- Deployment guide written
+- Environment configuration documented
+- Troubleshooting guide created
+- Admin user guide completed
+- Customer FAQ created
+
+---
+
+### Business User Stories
+
+**US-4.15: Launch the Store**
+- **As a** business owner
+- **I want to** launch the e-commerce store
+- **So that** I can start selling products online
+
+**Acceptance Criteria:**
+- All features tested and working
+- All critical bugs fixed
+- Production deployment successful
+- Domain and SSL configured
+- Payment gateway in production mode
+- Initial products and categories added
+- Admin trained on using the system
+- Support plan in place
+- Launch announcement prepared
+- Store is live and accessible to customers
+
+---
+
 ## 📋 Sprint Backlog
 
 ### Front-End Development Tasks

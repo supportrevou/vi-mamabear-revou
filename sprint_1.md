@@ -19,6 +19,127 @@
 
 ---
 
+## 👥 User Stories
+
+### Customer User Stories
+
+**US-1.1: User Registration**
+- **As a** new customer
+- **I want to** create an account with my email and password
+- **So that** I can save my information and track my orders
+
+**Acceptance Criteria:**
+- User can register with name, email, and password
+- Password must be at least 8 characters
+- Email must be unique and valid format
+- User receives email verification link
+- Success message displayed after registration
+
+---
+
+**US-1.2: User Login**
+- **As a** registered customer
+- **I want to** log in to my account
+- **So that** I can access my profile and order history
+
+**Acceptance Criteria:**
+- User can log in with email and password
+- "Remember me" option keeps user logged in
+- Error message shown for invalid credentials
+- User redirected to homepage after successful login
+- Session persists across page refreshes
+
+---
+
+**US-1.3: Password Reset**
+- **As a** customer who forgot my password
+- **I want to** reset my password via email
+- **So that** I can regain access to my account
+
+**Acceptance Criteria:**
+- User can request password reset with email
+- Reset link sent to registered email
+- Link expires after 1 hour
+- User can set new password with reset link
+- Success message shown after password reset
+
+---
+
+**US-1.4: Browse Homepage**
+- **As a** visitor
+- **I want to** see featured products and categories on the homepage
+- **So that** I can discover products and start shopping
+
+**Acceptance Criteria:**
+- Homepage displays hero banner
+- Featured products section shows at least 8 products
+- Category showcase displays main categories
+- All sections are responsive on mobile and tablet
+- Navigation menu is accessible from homepage
+
+---
+
+**US-1.5: Navigate Website**
+- **As a** visitor
+- **I want to** use the navigation menu to browse different sections
+- **So that** I can easily find what I'm looking for
+
+**Acceptance Criteria:**
+- Navbar displays logo, menu items, search bar, cart icon, and user menu
+- Footer displays company info, links, and contact information
+- Mobile hamburger menu works on small screens
+- All navigation links are functional
+- Cart icon shows item count badge
+
+---
+
+### Admin User Stories
+
+**US-1.6: Manage Products (Basic CRUD)**
+- **As an** admin
+- **I want to** create, view, update, and delete products
+- **So that** I can manage the product catalog
+
+**Acceptance Criteria:**
+- Admin can create new products with name, description, price, weight, and SKU
+- Admin can view list of all products
+- Admin can edit existing product information
+- Admin can delete products
+- All changes are saved to database
+
+---
+
+### Developer User Stories
+
+**US-1.7: Project Setup**
+- **As a** developer
+- **I want to** have a properly configured development environment
+- **So that** I can start building features efficiently
+
+**Acceptance Criteria:**
+- Next.js project initialized with App Router
+- Tailwind CSS and Shadcn/ui configured
+- Backend server running with Express/NestJS
+- PostgreSQL database connected
+- Prisma ORM configured
+- All team members can run project locally
+
+---
+
+**US-1.8: API Documentation**
+- **As a** developer
+- **I want to** have clear API documentation
+- **So that** I can integrate frontend with backend easily
+
+**Acceptance Criteria:**
+- Swagger/OpenAPI documentation set up
+- All authentication endpoints documented
+- All product endpoints documented
+- Postman collection available
+- Example requests and responses provided
+
+---
+
 ## 📋 Sprint Backlog
 
 ### Front-End Development Tasks
