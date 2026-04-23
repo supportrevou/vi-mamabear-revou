@@ -1,10 +1,10 @@
-# 🐻 Project Brief: Mamabear E-commerce Web App
+# 🐻 Project Brief: Mamabear E-commerce **Mobile-first** Web App
 
 ## 1. Project Overview
 
 ### 1.1 Executive Summary
 * **Client:** Mamabear (UMKM)
-* **Project Goal:** To build a robust, scalable, and user-friendly e-commerce platform that allows Mamabear to transition from third-party marketplaces to a dedicated brand-owned channel.
+* **Project Goal:** To build a **Mobile-first**, robust, scalable, and user-friendly e-commerce platform that allows Mamabear to transition from third-party marketplaces to a dedicated brand-owned channel.
 * **Duration:** 8 Weeks (4 Sprints x 2 Weeks)
 * **Methodology:** Agile-Lite (Direct implementation with bi-weekly Sprint Reviews)
 * **Budget Consideration:** Cost-effective solution leveraging modern open-source technologies
