@@ -277,3 +277,23 @@ This project follows a **code-first approach** by bypassing the formal UI/UX des
 * Shadcn/ui: https://ui.shadcn.com
 * Midtrans: https://midtrans.com
 * RajaOngkir: https://rajaongkir.com
+
+
+---
+
+## 8. Assessment Rubric
+
+| Category | Criteria |
+| :--- | :--- |
+| **Business Logic Implementation** | The implemented feature(s) match the requirements and acceptance criteria of the chosen user story from the PRD. |
+| | The application (Front End and Back End) is successfully deployed and accessible via valid links. |
+| | The deployed functionality runs without critical bugs (does not crash during normal use). |
+| **Documentation Craftsmanship** | Codebase is well-structured, maintainable, and follows best practices |
+| | Commit messages follow the Conventional Commits format. |
+| | Commits are made regularly and are micro-commits (small, focused changes). |
+| **Team Integration** | Regular project updates and participation in team communications |
+| | Effective use of conventional commits and active branching |
+| **Issue Resolution** | Demonstrates effective debugging and error handling |
+| | Handles edge cases and unexpected inputs gracefully |
+| **Analytical Inquiry** | Requirements are properly translated into technical tasks |
+| | Clearly documents key decisions and changes throughout the project |

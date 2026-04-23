@@ -226,10 +226,6 @@
 - [ ] Add social sharing buttons
 - [ ] Ensure mobile-responsive design
 
-**Estimated Effort:** 24 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 1 completion
-
 #### 2. Authentication Integration
 - [ ] Integrate login API with frontend form
   - Handle successful login (store JWT token)
@@ -258,10 +254,6 @@
   - Dropdown menu (Profile, Orders, Logout)
 - [ ] Implement persistent login (token refresh)
 
-**Estimated Effort:** 16 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 1 Auth API
-
 #### 3. Product Listing Integration
 - [ ] Replace homepage mock data with API calls
   - Fetch featured products
@@ -281,10 +273,6 @@
 - [ ] Add loading skeletons for better UX
 - [ ] Implement error handling and retry mechanisms
 - [ ] Add "Load More" or infinite scroll option
-
-**Estimated Effort:** 16 hours  
-**Priority:** High  
-**Dependencies:** Sprint 1 Product API, Sprint 2 BE APIs
 
 #### 4. Search & Filter UI
 - [ ] Implement functional search bar
@@ -311,10 +299,6 @@
 - [ ] Implement mobile-friendly filter drawer
 - [ ] Add filter state to URL parameters (for sharing)
 
-**Estimated Effort:** 20 hours  
-**Priority:** High  
-**Dependencies:** Sprint 2 BE Search API
-
 #### 5. Category Pages
 - [ ] Create category listing page (`/categories`)
   - Display all categories with images
@@ -328,10 +312,6 @@
   - Mega menu for desktop
   - Collapsible menu for mobile
   - Category icons/images
-
-**Estimated Effort:** 12 hours  
-**Priority:** Medium  
-**Dependencies:** Sprint 2 Category API
 
 ---
 
@@ -364,10 +344,6 @@
   - Use pagination to limit result sets
 - [ ] Implement search analytics (track popular searches)
 
-**Estimated Effort:** 20 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 1 Product Schema
-
 #### 2. Category Management System
 - [ ] Design Category database schema
   - id, name, slug, description, imageUrl
@@ -393,10 +369,6 @@
 - [ ] Update Product schema to include categoryId
 - [ ] Seed database with sample categories (5-10 categories)
 - [ ] Update API documentation
-
-**Estimated Effort:** 16 hours  
-**Priority:** High  
-**Dependencies:** Sprint 1 Product API
 
 #### 3. Media Storage Integration
 - [ ] Choose and set up cloud storage service
@@ -425,10 +397,6 @@
 - [ ] Migrate existing placeholder images to cloud storage
 - [ ] Implement image CDN caching
 
-**Estimated Effort:** 18 hours  
-**Priority:** High  
-**Dependencies:** Sprint 1 Product Schema
-
 #### 4. Product Variant System
 - [ ] Enhance ProductVariant schema
   - id, productId, variantType (size, color, etc.)
@@ -445,10 +413,6 @@
 - [ ] Implement variant stock management
 - [ ] Add variant validation logic
 - [ ] Seed database with sample product variants
-
-**Estimated Effort:** 14 hours  
-**Priority:** Medium  
-**Dependencies:** Sprint 1 Product Schema
 
 #### 5. API Performance Optimization
 - [ ] Implement response caching
@@ -469,10 +433,6 @@
 - [ ] Add API response time monitoring
 - [ ] Create database backup strategy
 
-**Estimated Effort:** 12 hours  
-**Priority:** Medium  
-**Dependencies:** All Sprint 2 BE tasks
-
 ---
 
 ## 🔗 Integration Tasks
@@ -488,10 +448,6 @@
 - [ ] Test loading states and empty states
 - [ ] Validate responsive design on all new pages
 - [ ] End-to-end testing of product discovery flow
-
-**Estimated Effort:** 12 hours  
-**Priority:** High  
-**Dependencies:** All FE and BE tasks
 
 ---
 
@@ -571,72 +527,6 @@
 
 ---
 
-## 📈 Success Metrics
-
-### Technical Metrics
-- [ ] Search results return within 300ms
-- [ ] Product Detail Page loads within 2 seconds
-- [ ] Image upload completes within 5 seconds
-- [ ] API endpoints maintain 99.9% uptime
-- [ ] Database queries optimized (no N+1 queries)
-
-### Functional Metrics
-- [ ] 100% of planned features completed
-- [ ] Users can find products using search
-- [ ] Users can filter products by category and price
-- [ ] Product images load properly on all devices
-- [ ] Zero P0/P1 bugs in production
-
-### User Experience Metrics
-- [ ] Search returns relevant results
-- [ ] Filters work intuitively
-- [ ] Product pages are informative
-- [ ] Images are high quality and load quickly
-- [ ] Mobile experience is smooth
-
----
-
-## 🚧 Known Risks & Mitigation
-
-| Risk | Impact | Probability | Mitigation Strategy |
-|------|--------|-------------|---------------------|
-| Cloud storage integration complexity | High | Medium | Start early; use well-documented service (Cloudinary) |
-| Search performance issues with large dataset | High | Medium | Implement caching; consider Elasticsearch for future |
-| Category hierarchy complexity | Medium | Low | Keep hierarchy simple (max 2-3 levels) |
-| Image upload failures | Medium | Medium | Implement retry logic; show clear error messages |
-| Variant system complexity | High | Medium | Start with simple variants; iterate based on needs |
-| API performance degradation | High | Low | Monitor performance; optimize queries proactively |
-
----
-
-## 📅 Sprint Schedule
-
-### Week 1
-**Days 1-2:** Category system and media storage setup (BE); PDP layout (FE)  
-**Days 3-4:** Search & filter logic (BE); Auth integration (FE)  
-**Day 5:** Integration testing and blocker resolution
-
-### Week 2
-**Days 1-2:** Complete variant system (BE); Search & filter UI (FE)  
-**Days 3-4:** Performance optimization (BE); Category pages (FE)  
-**Day 5:** Final integration, testing, and sprint review preparation
-
----
-
-## 🤝 Team Collaboration
-
-### Key Integration Points
-- **Day 3:** Backend search API ready for frontend integration
-- **Day 5:** Category API ready for frontend integration
-- **Day 7:** Media storage ready for image uploads
-- **Day 10:** All APIs ready for final integration testing
-
-### Pair Programming Sessions
-- Session 1: Product variant implementation (FE + BE)
-- Session 2: Search functionality integration
-- Session 3: Image upload and display
-
----
 
 ## 📚 Resources & References
 
@@ -645,12 +535,6 @@
 - [AWS S3 Documentation](https://docs.aws.amazon.com/s3/)
 - [PostgreSQL Full-Text Search](https://www.postgresql.org/docs/current/textsearch.html)
 - [Next.js Image Optimization](https://nextjs.org/docs/basic-features/image-optimization)
-
-### Tutorials
-- Implementing Full-Text Search in PostgreSQL
-- Building Image Upload with Cloudinary
-- Advanced Filtering in React
-- Product Variant Management Best Practices
 
 ### Tools
 - **Image Optimization:** TinyPNG, ImageOptim
@@ -690,7 +574,3 @@
 
 ---
 
-**Sprint 2 Start Date:** [To be determined]  
-**Sprint 2 End Date:** [To be determined]  
-**Sprint Review Date:** [To be determined]  
-**Sprint Retrospective Date:** [To be determined]

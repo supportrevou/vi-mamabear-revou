@@ -315,10 +315,6 @@
   - Responsive tables
   - Mobile-friendly forms
 
-**Estimated Effort:** 20 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 4 BE Admin APIs
-
 #### 2. Product Management UI
 - [ ] Create product list page (`/admin/products`)
   - Searchable product table
@@ -355,10 +351,6 @@
   - Error handling and validation
   - Import progress indicator
 
-**Estimated Effort:** 28 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 2 Product & Category APIs, Sprint 2 Media Storage
-
 #### 3. Order Management UI
 - [ ] Create order list page (`/admin/orders`)
   - Searchable order table
@@ -394,10 +386,6 @@
   - Order details
   - Print-friendly CSS
 
-**Estimated Effort:** 24 hours  
-**Priority:** High  
-**Dependencies:** Sprint 3 Order APIs
-
 #### 4. Category Management UI
 - [ ] Create category list page (`/admin/categories`)
   - Hierarchical category tree view
@@ -418,10 +406,6 @@
   - Indentation for subcategories
   - Move category to different parent
 
-**Estimated Effort:** 12 hours  
-**Priority:** Medium  
-**Dependencies:** Sprint 2 Category APIs
-
 #### 5. Customer Management UI
 - [ ] Create customer list page (`/admin/customers`)
   - Customer table with search
@@ -437,10 +421,6 @@
   - Last order date
   - Registered addresses
   - Account status (active/blocked)
-
-**Estimated Effort:** 12 hours  
-**Priority:** Low  
-**Dependencies:** Sprint 1 User APIs, Sprint 3 Order APIs
 
 #### 6. Reports & Analytics UI
 - [ ] Create sales report page (`/admin/reports/sales`)
@@ -465,10 +445,6 @@
   - Interactive charts
   - Responsive charts
   - Export chart as image
-
-**Estimated Effort:** 16 hours  
-**Priority:** Medium  
-**Dependencies:** Sprint 4 BE Reporting APIs
 
 #### 7. Responsive UI Polishing
 - [ ] Audit all pages for mobile responsiveness
@@ -497,10 +473,6 @@
   - iOS (iPhone)
   - Android (various manufacturers)
   - Tablets (iPad, Android tablets)
-
-**Estimated Effort:** 16 hours  
-**Priority:** High  
-**Dependencies:** All previous sprints
 
 #### 8. SEO Optimization
 - [ ] Implement SEO meta tags
@@ -536,10 +508,6 @@
   - Track conversions
   - Track e-commerce events
 
-**Estimated Effort:** 12 hours  
-**Priority:** High  
-**Dependencies:** All previous sprints
-
 #### 9. Final Bug Fixing & QA
 - [ ] Conduct comprehensive testing
   - Functional testing (all features)
@@ -565,10 +533,6 @@
   - Fix performance issues
   - Optimize images
   - Minimize JavaScript
-
-**Estimated Effort:** 20 hours  
-**Priority:** Critical  
-**Dependencies:** All previous tasks
 
 ---
 
@@ -600,10 +564,6 @@
   - Prevent self-role-change
   - Prevent deleting last super admin
   - Validate role assignments
-
-**Estimated Effort:** 16 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 1 Auth System
 
 #### 2. Sales Reporting API
 - [ ] Design Report aggregation queries
@@ -640,10 +600,6 @@
   - Filter by customer
   - Filter by status
 
-**Estimated Effort:** 20 hours  
-**Priority:** High  
-**Dependencies:** Sprint 3 Order System
-
 #### 3. Enhanced Order Management
 - [ ] Implement order status update endpoint
   - `PUT /api/admin/orders/:id/status` - Update order status
@@ -671,10 +627,6 @@
   - Average processing time
   - Fulfillment rate
 
-**Estimated Effort:** 16 hours  
-**Priority:** High  
-**Dependencies:** Sprint 3 Order APIs
-
 #### 4. Product Management Enhancements
 - [ ] Implement bulk product operations
   - `POST /api/admin/products/bulk-update` - Bulk update products
@@ -696,10 +648,6 @@
   - Copy all product data
   - Generate new SKU
   - Mark as draft
-
-**Estimated Effort:** 14 hours  
-**Priority:** Medium  
-**Dependencies:** Sprint 2 Product APIs
 
 #### 5. System Configuration & Settings
 - [ ] Create settings database schema
@@ -723,10 +671,6 @@
   - Validate setting types
   - Validate required settings
   - Sanitize input
-
-**Estimated Effort:** 10 hours  
-**Priority:** Low  
-**Dependencies:** None
 
 #### 6. Production Deployment Preparation
 - [ ] Set up production database
@@ -764,10 +708,6 @@
   - IP-based limiting
   - Protect against DDoS
 
-**Estimated Effort:** 16 hours  
-**Priority:** Critical  
-**Dependencies:** All BE tasks
-
 #### 7. Frontend Deployment
 - [ ] Deploy frontend to Vercel
   - Connect GitHub repository
@@ -791,10 +731,6 @@
   - Configure DNS records
   - Point domain to Vercel
   - Configure www redirect
-
-**Estimated Effort:** 8 hours  
-**Priority:** Critical  
-**Dependencies:** Frontend deployment preparation
 
 #### 8. Security Hardening
 - [ ] Conduct security audit
@@ -827,10 +763,6 @@
   - Incident response plan
   - Data protection policies
 
-**Estimated Effort:** 12 hours  
-**Priority:** Critical  
-**Dependencies:** All BE tasks
-
 ---
 
 ## 🔗 Integration Tasks
@@ -844,10 +776,6 @@
 - [ ] Verify all admin features work correctly
 - [ ] Test on staging environment
 - [ ] Conduct UAT with client
-
-**Estimated Effort:** 12 hours  
-**Priority:** High  
-**Dependencies:** All FE and BE tasks
 
 ---
 
@@ -921,173 +849,3 @@
 
 ---
 
-## 🚧 Known Risks & Mitigation
-
-| Risk | Impact | Probability | Mitigation Strategy |
-|------|--------|-------------|---------------------|
-| Production deployment issues | Critical | Medium | Thorough testing on staging; deployment checklist; rollback plan |
-| Performance issues in production | High | Low | Load testing before launch; monitoring; optimization |
-| Security vulnerabilities discovered | Critical | Low | Security audit; penetration testing; bug bounty (future) |
-| Domain/SSL configuration issues | Medium | Low | Test DNS configuration; use reliable SSL provider |
-| Last-minute bugs discovered | High | Medium | Allocate buffer time; prioritize bug fixes; have hotfix process |
-| Client feedback requires changes | Medium | Medium | Regular client demos; manage expectations; prioritize changes |
-| Incomplete documentation | Medium | Low | Document as you build; allocate time for documentation |
-
----
-
-## 📅 Sprint Schedule
-
-### Week 1
-**Days 1-2:** Admin dashboard and RBAC implementation  
-**Days 3-4:** Product and order management UI; Reporting APIs  
-**Day 5:** Integration and testing
-
-### Week 2
-**Days 1-2:** Responsive polishing and SEO optimization  
-**Days 3:** Final bug fixing and QA  
-**Day 4:** Production deployment and configuration  
-**Day 5:** Final testing, client training, and launch preparation
-
----
-
-## 🤝 Team Collaboration
-
-### Critical Milestones
-- **Day 5:** Admin features complete and integrated
-- **Day 8:** Responsive design complete
-- **Day 9:** All bugs fixed, ready for deployment
-- **Day 10:** Production deployment complete
-- **Day 10 (EOD):** Application live and accessible
-
----
-
-## 🚀 Launch Checklist
-
-### Pre-Launch
-- [ ] All features tested and working
-- [ ] All P0 and P1 bugs fixed
-- [ ] Security audit completed
-- [ ] Performance optimization done
-- [ ] SEO optimization complete
-- [ ] Analytics configured
-- [ ] Monitoring set up
-- [ ] Backup strategy in place
-- [ ] Documentation complete
-- [ ] Client training completed
-- [ ] Support plan in place
-
-### Deployment
-- [ ] Database migrated to production
-- [ ] Backend deployed to production server
-- [ ] Frontend deployed to Vercel
-- [ ] Environment variables configured
-- [ ] Domain configured
-- [ ] SSL certificate installed
-- [ ] DNS records updated
-- [ ] HTTPS working correctly
-- [ ] Email service configured
-- [ ] Payment gateway in production mode
-- [ ] Shipping API in production mode
-
-### Post-Launch
-- [ ] Smoke testing on production
-- [ ] Monitor error logs
-- [ ] Monitor performance metrics
-- [ ] Monitor user activity
-- [ ] Submit sitemap to Google
-- [ ] Set up Google Search Console
-- [ ] Announce launch
-- [ ] Gather initial user feedback
-- [ ] Plan for post-launch support
-
----
-
-## 📝 Documentation Deliverables
-
-### Technical Documentation
-- [ ] API documentation (complete and up-to-date)
-- [ ] Database schema documentation
-- [ ] Architecture documentation
-- [ ] Deployment guide
-- [ ] Environment configuration guide
-- [ ] Troubleshooting guide
-- [ ] Security documentation
-
-### User Documentation
-- [ ] Admin user guide
-  - How to manage products
-  - How to manage orders
-  - How to manage categories
-  - How to view reports
-  - How to manage customers
-- [ ] Customer FAQ
-- [ ] Video tutorials (optional)
-
-### Operational Documentation
-- [ ] Maintenance guide
-- [ ] Backup and recovery procedures
-- [ ] Monitoring guide
-- [ ] Incident response plan
-- [ ] Support procedures
-
----
-
-## 📝 Sprint Retrospective Template
-
-### What Went Well?
-- (To be filled at end of sprint)
-
-### What Could Be Improved?
-- (To be filled at end of sprint)
-
-### Action Items for Post-Launch
-- (To be filled at end of sprint)
-
-### Key Learnings
-- (To be filled at end of sprint)
-
-### Celebration
-- (Celebrate the successful launch! 🎉)
-
----
-
-## ✅ Sprint Review Checklist
-
-- [ ] Demo complete admin dashboard
-- [ ] Show product management features
-- [ ] Demonstrate order management
-- [ ] Show reports and analytics
-- [ ] Demonstrate responsive design on multiple devices
-- [ ] Show SEO optimizations
-- [ ] Present production deployment
-- [ ] Show live website
-- [ ] Review performance metrics
-- [ ] Discuss post-launch support plan
-- [ ] Celebrate successful project completion! 🎉
-
----
-
-## 🎉 Project Completion Criteria
-
-At the end of Sprint 4, the Mamabear e-commerce platform should be:
-
-1. **Fully Functional** - All features working as expected
-2. **Secure** - Security best practices implemented
-3. **Performant** - Fast load times and responsive
-4. **Responsive** - Works perfectly on all devices
-5. **SEO Optimized** - Ready to rank in search engines
-6. **Deployed** - Live on production with custom domain
-7. **Documented** - Complete technical and user documentation
-8. **Supported** - Client trained and support plan in place
-
-**The platform is ready to generate revenue and grow the Mamabear business! 🚀🐻**
-
----
-
-**Sprint 4 Start Date:** [To be determined]  
-**Sprint 4 End Date:** [To be determined]  
-**Sprint Review Date:** [To be determined]  
-**Sprint Retrospective Date:** [To be determined]  
-**Launch Date:** [To be determined] 🚀
-
----

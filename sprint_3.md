@@ -297,10 +297,6 @@
   - Handle out-of-stock items
   - Price change notifications
 
-**Estimated Effort:** 20 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 2 Product APIs
-
 #### 2. Checkout Flow UI
 - [ ] Create multi-step checkout page (`/checkout`)
   - Step 1: Shipping Information
@@ -348,10 +344,6 @@
   - "Track Order" button
   - "Continue Shopping" button
 
-**Estimated Effort:** 28 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 3 BE Shipping & Payment APIs
-
 #### 3. Search & Filter Integration
 - [ ] Complete search functionality integration
   - Connect search bar to search API
@@ -373,10 +365,6 @@
   - Debounce search input
   - Lazy load filter options
   - Cache filter results
-
-**Estimated Effort:** 12 hours  
-**Priority:** High  
-**Dependencies:** Sprint 2 Search API
 
 #### 4. User Account - Order History
 - [ ] Create order history page (`/account/orders`)
@@ -403,10 +391,6 @@
   - Show current shipping status
   - Estimated delivery date
   - Tracking history
-
-**Estimated Effort:** 16 hours  
-**Priority:** Medium  
-**Dependencies:** Sprint 3 Order API
 
 ---
 
@@ -444,10 +428,6 @@
   - Handle API timeouts
   - Fallback for API failures
   - Log shipping API errors
-
-**Estimated Effort:** 18 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 2 Product Schema (weight field)
 
 #### 2. Payment Gateway Integration (Midtrans/Xendit)
 - [ ] Choose payment gateway (Midtrans recommended)
@@ -488,10 +468,6 @@
   - Failed
   - Expired
   - Cancelled
-
-**Estimated Effort:** 24 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 3 Order System
 
 #### 3. Order & Inventory Management
 - [ ] Design Order database schema
@@ -549,10 +525,6 @@
   - Filter by date range
   - Filter by customer
 
-**Estimated Effort:** 28 hours  
-**Priority:** Critical  
-**Dependencies:** Sprint 2 Product & User APIs
-
 #### 4. Shopping Cart API
 - [ ] Design Cart database schema
   - id, userId (nullable for guest carts), sessionId
@@ -584,10 +556,6 @@
   - Optimize cart queries (eager loading)
   - Implement cart item deduplication
 
-**Estimated Effort:** 16 hours  
-**Priority:** High  
-**Dependencies:** Sprint 2 Product APIs
-
 #### 5. Email Notification System
 - [ ] Set up email service (SendGrid, AWS SES, or Nodemailer)
 - [ ] Create email templates
@@ -614,10 +582,6 @@
   - Log email failures
   - Monitor email delivery rates
 
-**Estimated Effort:** 12 hours  
-**Priority:** Medium  
-**Dependencies:** Sprint 3 Order System
-
 ---
 
 ## 🔗 Integration Tasks
@@ -633,10 +597,6 @@
 - [ ] Test order status updates
 - [ ] Validate inventory reduction
 - [ ] Test error scenarios (payment failure, out of stock, etc.)
-
-**Estimated Effort:** 16 hours  
-**Priority:** Critical  
-**Dependencies:** All FE and BE tasks
 
 ---
 
@@ -720,51 +680,6 @@
 
 ---
 
-## 🚧 Known Risks & Mitigation
-
-| Risk | Impact | Probability | Mitigation Strategy |
-|------|--------|-------------|---------------------|
-| Payment gateway integration complexity | Critical | High | Start early; use comprehensive documentation; test thoroughly in sandbox |
-| Shipping API reliability issues | High | Medium | Implement caching; have fallback shipping rates |
-| Inventory race conditions | High | Medium | Use database transactions; implement pessimistic locking |
-| Payment webhook failures | Critical | Low | Implement retry mechanism; manual reconciliation process |
-| Email delivery failures | Medium | Medium | Use reliable email service; implement queue with retries |
-| Checkout flow too complex | High | Low | User testing; simplify steps if needed |
-| Currency/price calculation errors | Critical | Low | Thorough testing; use decimal types for money |
-
----
-
-## 📅 Sprint Schedule
-
-### Week 1
-**Days 1-2:** Shopping cart API and UI; Shipping API integration  
-**Days 3-4:** Payment gateway setup; Order system backend  
-**Day 5:** Cart and shipping integration testing
-
-### Week 2
-**Days 1-2:** Checkout flow UI; Payment integration  
-**Days 3-4:** Order completion flow; Email notifications  
-**Day 5:** End-to-end testing, bug fixes, sprint review preparation
-
----
-
-## 🤝 Team Collaboration
-
-### Critical Integration Points
-- **Day 3:** Cart API ready for frontend integration
-- **Day 5:** Shipping API ready for checkout integration
-- **Day 7:** Payment gateway ready for testing
-- **Day 9:** Order API ready for frontend integration
-- **Day 10:** Complete purchase flow ready for end-to-end testing
-
-### Testing Strategy
-- Unit tests for all business logic
-- Integration tests for payment and shipping APIs
-- End-to-end tests for complete purchase flow
-- Manual testing of payment scenarios
-- Security testing of payment and order endpoints
-
----
 
 ## 📚 Resources & References
 
@@ -855,13 +770,6 @@
 - [ ] Review payment security measures
 - [ ] Discuss any challenges faced
 - [ ] Present Sprint 4 preview (admin panel & launch)
-
----
-
-**Sprint 3 Start Date:** [To be determined]  
-**Sprint 3 End Date:** [To be determined]  
-**Sprint Review Date:** [To be determined]  
-**Sprint Retrospective Date:** [To be determined]
 
 ---
 

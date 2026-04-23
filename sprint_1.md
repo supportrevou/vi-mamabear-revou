@@ -144,6 +144,31 @@
 
 ### Front-End Development Tasks
 
+#### 0. UI Mockup Design (Pre-Development)
+- [ ] Create low-fidelity UI mockups using Claude.ai
+  - Homepage layout mockup
+  - Product listing page mockup
+  - Product detail page mockup
+  - Shopping cart page mockup
+  - Checkout flow mockups
+  - User authentication pages (Login/Register)
+  - Admin dashboard layout mockup
+- [ ] Review mockups with team and stakeholders
+- [ ] Get approval before starting development
+- [ ] Use mockups as reference during implementation
+
+**Instructions for Creating Mockups:**
+1. Visit https://claude.ai
+2. Use prompts like:
+   - "Create a low-fidelity wireframe mockup for an e-commerce homepage with hero banner, featured products grid, and category showcase"
+   - "Design a product detail page mockup with image gallery, product info, variant selector, and add to cart button"
+   - "Create a checkout flow mockup with shipping information, shipping method selection, and payment method"
+3. Request ASCII art or text-based wireframes for quick iteration
+4. Save mockups as images or markdown files in project documentation
+5. Share with team for feedback and approval
+
+---
+
 #### 1. Project Setup & Infrastructure
 - [ ] Initialize Next.js 14+ project with App Router
 - [ ] Configure Tailwind CSS
@@ -153,10 +178,6 @@
 - [ ] Set up environment variables (.env.local)
 - [ ] Create base layout components (RootLayout)
 - [ ] Configure Next.js Image optimization
-
-**Estimated Effort:** 8 hours  
-**Priority:** Critical  
-**Dependencies:** None
 
 #### 2. Global Navigation Components
 - [ ] Design and implement responsive Navbar
@@ -173,10 +194,6 @@
 - [ ] Implement mobile hamburger menu
 - [ ] Add smooth scroll and navigation transitions
 
-**Estimated Effort:** 16 hours  
-**Priority:** High  
-**Dependencies:** Project Setup
-
 #### 3. Homepage Development
 - [ ] Create hero section with banner/carousel placeholder
 - [ ] Implement featured products section (using mock data)
@@ -187,10 +204,6 @@
 - [ ] Implement "Why Choose Us" or benefits section
 - [ ] Add newsletter subscription form UI (non-functional)
 - [ ] Ensure full mobile responsiveness
-
-**Estimated Effort:** 20 hours  
-**Priority:** High  
-**Dependencies:** Global Navigation Components
 
 #### 4. Authentication UI
 - [ ] Create Login page/modal
@@ -208,10 +221,6 @@
 - [ ] Implement loading states and error handling
 - [ ] Add form submission handlers (ready for API integration)
 
-**Estimated Effort:** 16 hours  
-**Priority:** High  
-**Dependencies:** Project Setup
-
 #### 5. Reusable Components Library
 - [ ] Button component (variants: primary, secondary, outline, ghost)
 - [ ] Input component (text, email, password with validation states)
@@ -220,10 +229,6 @@
 - [ ] Loading spinner component
 - [ ] Alert/Toast notification component
 - [ ] Modal/Dialog component
-
-**Estimated Effort:** 12 hours  
-**Priority:** Medium  
-**Dependencies:** Project Setup
 
 ---
 
@@ -243,10 +248,6 @@
 - [ ] Set up error handling middleware
 - [ ] Configure logging (Winston or similar)
 - [ ] Create database connection health check endpoint
-
-**Estimated Effort:** 10 hours  
-**Priority:** Critical  
-**Dependencies:** None
 
 #### 2. Authentication System
 - [ ] Design User database schema
@@ -269,10 +270,6 @@
 - [ ] Add input validation and sanitization
 - [ ] Write unit tests for auth services
 
-**Estimated Effort:** 24 hours  
-**Priority:** Critical  
-**Dependencies:** Server & Database Setup
-
 #### 3. Product Data Structure & Basic CRUD
 - [ ] Design Product database schema
   - id, name, slug, description, price, weight, sku
@@ -294,10 +291,6 @@
 - [ ] Seed database with sample products (10-15 items)
 - [ ] Write API documentation (Swagger/OpenAPI)
 
-**Estimated Effort:** 20 hours  
-**Priority:** High  
-**Dependencies:** Server & Database Setup
-
 #### 4. API Documentation & Testing
 - [ ] Set up Swagger/OpenAPI documentation
 - [ ] Document all authentication endpoints
@@ -306,10 +299,6 @@
 - [ ] Write integration tests for auth endpoints
 - [ ] Write integration tests for product endpoints
 - [ ] Set up test database
-
-**Estimated Effort:** 10 hours  
-**Priority:** Medium  
-**Dependencies:** Authentication System, Product CRUD
 
 ---
 
@@ -322,10 +311,6 @@
 - [ ] Test authentication flow end-to-end
 - [ ] Verify product data display on homepage
 - [ ] Test error handling and loading states
-
-**Estimated Effort:** 8 hours  
-**Priority:** High  
-**Dependencies:** All FE and BE tasks
 
 ---
 
@@ -396,69 +381,6 @@
 
 ---
 
-## 📈 Success Metrics
-
-### Technical Metrics
-- [ ] All API endpoints respond within 200ms (average)
-- [ ] Frontend initial load time < 3 seconds
-- [ ] Zero critical security vulnerabilities
-- [ ] Code coverage > 70% for backend
-- [ ] Lighthouse score > 90 for performance
-
-### Functional Metrics
-- [ ] 100% of planned features completed
-- [ ] All acceptance criteria met
-- [ ] Zero P0/P1 bugs in production
-- [ ] Successful deployment to staging environment
-
----
-
-## 🚧 Known Risks & Mitigation
-
-| Risk | Impact | Probability | Mitigation Strategy |
-|------|--------|-------------|---------------------|
-| Team members unfamiliar with Next.js 14 App Router | High | Medium | Allocate time for learning; pair programming sessions |
-| Database schema changes required mid-sprint | Medium | Low | Thorough schema review before implementation |
-| Third-party UI library limitations | Medium | Low | Evaluate Shadcn/ui capabilities early; have fallback plan |
-| Authentication complexity underestimated | High | Medium | Start auth implementation early; allocate buffer time |
-| Integration issues between FE and BE | Medium | Medium | Daily sync meetings; early integration testing |
-
----
-
-## 📅 Sprint Schedule
-
-### Week 1
-**Days 1-2:** Project setup and infrastructure  
-**Days 3-4:** Begin authentication system (BE) and navigation components (FE)  
-**Day 5:** Daily integration check and blocker resolution
-
-### Week 2
-**Days 1-2:** Complete authentication and product CRUD  
-**Days 3-4:** Homepage development and initial integration  
-**Day 5:** Testing, bug fixes, and sprint review preparation
-
----
-
-## 🤝 Team Collaboration
-
-### Daily Standup Questions
-1. What did you complete yesterday?
-2. What will you work on today?
-3. Are there any blockers or dependencies?
-
-### Communication Channels
-- **Urgent Issues:** Slack/Discord direct message
-- **Code Reviews:** GitHub/GitLab pull requests
-- **Questions:** Team Slack channel
-- **Documentation:** Notion/Confluence
-
-### Code Review Guidelines
-- All code must be reviewed before merging
-- Reviews should be completed within 24 hours
-- Focus on: functionality, security, performance, readability
-- Be constructive and respectful in feedback
-
----
 
 ## 📚 Resources & References
 
@@ -468,12 +390,6 @@
 - [Shadcn/ui Components](https://ui.shadcn.com)
 - [Prisma Documentation](https://www.prisma.io/docs)
 - [Express.js Guide](https://expressjs.com/en/guide/routing.html)
-
-### Tutorials
-- Next.js App Router Tutorial
-- JWT Authentication Best Practices
-- PostgreSQL Database Design
-- RESTful API Design Principles
 
 ### Tools
 - **Design Reference:** Dribbble, Behance (for e-commerce inspiration)
@@ -508,7 +424,3 @@
 
 ---
 
-**Sprint 1 Start Date:** [To be determined]  
-**Sprint 1 End Date:** [To be determined]  
-**Sprint Review Date:** [To be determined]  
-**Sprint Retrospective Date:** [To be determined]
