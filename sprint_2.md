@@ -163,38 +163,6 @@
 
 ---
 
-### Developer User Stories
-
-**US-2.10: Implement Full-Text Search**
-- **As a** developer
-- **I want to** implement efficient full-text search
-- **So that** customers get relevant search results quickly
-
-**Acceptance Criteria:**
-- PostgreSQL full-text search implemented
-- Search indexes created on relevant fields
-- Search results ranked by relevance
-- Search handles typos and partial matches
-- Search performance optimized (< 300ms response time)
-- Search analytics tracked
-
----
-
-**US-2.11: Optimize API Performance**
-- **As a** developer
-- **I want to** optimize API response times
-- **So that** the application loads quickly for users
-
-**Acceptance Criteria:**
-- Response caching implemented for product listings
-- Database queries optimized (no N+1 queries)
-- Appropriate indexes added to database
-- Pagination implemented for all list endpoints
-- API response time < 200ms average
-- Gzip compression enabled
-
----
-
 ## 📋 Sprint Backlog
 
 ### Front-End Development Tasks
@@ -447,7 +415,6 @@
 - [ ] Verify error handling for all API calls
 - [ ] Test loading states and empty states
 - [ ] Validate responsive design on all new pages
-- [ ] End-to-end testing of product discovery flow
 
 ---
 
@@ -574,3 +541,465 @@
 
 ---
 
+
+## 📖 Implementation Tutorials
+
+### Tutorial: Implementing Image Upload with Cloudinary (US-2.8)
+
+This tutorial will guide you through implementing image upload functionality using Cloudinary as the cloud storage provider.
+
+> **Note:** Jika ada kendala dengan Cloudinary (misalnya: limit gratis tercapai, masalah regional, atau preferensi lain), Anda bisa explore alternatif service seperti:
+> - **AWS S3** - Lebih fleksibel, cocok untuk scale besar
+> - **Supabase Storage** - Open source, mudah diintegrasikan
+> - **ImageKit** - Fokus pada image optimization
+> - **Uploadcare** - User-friendly dengan fitur lengkap
+> - **Backblaze B2** - Cost-effective alternative untuk S3
+> 
+> Konsep implementasi tetap sama: upload, store, dan retrieve image URLs.
+
+---
+
+#### Step 1: Set Up Cloudinary Account
+
+1. Sign up for a free Cloudinary account at https://cloudinary.com
+2. After signing in, go to Dashboard to find your credentials:
+   - Cloud Name
+   - API Key
+   - API Secret
+3. Add these credentials to your `.env` file:
+   ```
+   CLOUDINARY_CLOUD_NAME=your_cloud_name
+   CLOUDINARY_API_KEY=your_api_key
+   CLOUDINARY_API_SECRET=your_api_secret
+   ```
+
+---
+
+#### Step 2: Install Required Packages
+
+For Backend (Node.js/Express):
+```bash
+npm install cloudinary multer multer-storage-cloudinary
+```
+
+For Frontend (Next.js):
+```bash
+npm install react-dropzone
+```
+
+---
+
+#### Step 3: Configure Cloudinary in Backend
+
+Create `src/config/cloudinary.js`:
+```javascript
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+module.exports = cloudinary;
+```
+
+---
+
+#### Step 4: Create Upload Middleware
+
+Create `src/middleware/upload.js`:
+```javascript
+const multer = require('multer');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require('../config/cloudinary');
+
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'mamabear/products',
+    allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
+    transformation: [{ width: 1000, height: 1000, crop: 'limit' }]
+  }
+});
+
+const upload = multer({
+  storage: storage,
+  limits: {
+    fileSize: 5 * 1024 * 1024 // 5MB limit
+  },
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype.startsWith('image/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files are allowed!'), false);
+    }
+  }
+});
+
+module.exports = upload;
+```
+
+---
+
+#### Step 5: Create Image Upload API Endpoints
+
+Create `src/routes/upload.routes.js`:
+```javascript
+const express = require('express');
+const router = express.Router();
+const upload = require('../middleware/upload');
+const { authenticate, isAdmin } = require('../middleware/auth');
+const cloudinary = require('../config/cloudinary');
+
+// Upload single image
+router.post('/image', authenticate, isAdmin, upload.single('image'), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: 'No image file provided' });
+    }
+
+    res.status(200).json({
+      message: 'Image uploaded successfully',
+      imageUrl: req.file.path,
+      publicId: req.file.filename
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Upload multiple images
+router.post('/images', authenticate, isAdmin, upload.array('images', 10), async (req, res) => {
+  try {
+    if (!req.files || req.files.length === 0) {
+      return res.status(400).json({ error: 'No image files provided' });
+    }
+
+    const uploadedImages = req.files.map(file => ({
+      imageUrl: file.path,
+      publicId: file.filename
+    }));
+
+    res.status(200).json({
+      message: 'Images uploaded successfully',
+      images: uploadedImages
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Delete image
+router.delete('/image/:publicId', authenticate, isAdmin, async (req, res) => {
+  try {
+    const { publicId } = req.params;
+    
+    // Delete from Cloudinary
+    await cloudinary.uploader.destroy(publicId);
+
+    res.status(200).json({ message: 'Image deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+module.exports = router;
+```
+
+---
+
+#### Step 6: Update Product Schema for Images
+
+Update your Prisma schema to include product images:
+```prisma
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  description String?
+  price       Decimal
+  stock       Int
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id])
+  images      ProductImage[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ProductImage {
+  id          String   @id @default(uuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  imageUrl    String
+  publicId    String
+  altText     String?
+  sortOrder   Int      @default(0)
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+```
+
+Run migration:
+```bash
+npx prisma migrate dev --name add_product_images
+```
+
+---
+
+#### Step 7: Create Product Image Management Endpoints
+
+Add to `src/routes/products.routes.js`:
+```javascript
+// Add images to product
+router.post('/:id/images', authenticate, isAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { images } = req.body; // Array of { imageUrl, publicId, altText, isFeatured }
+
+    const product = await prisma.product.findUnique({ where: { id } });
+    if (!product) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+
+    const createdImages = await prisma.productImage.createMany({
+      data: images.map((img, index) => ({
+        productId: id,
+        imageUrl: img.imageUrl,
+        publicId: img.publicId,
+        altText: img.altText || product.name,
+        sortOrder: index,
+        isFeatured: img.isFeatured || false
+      }))
+    });
+
+    res.status(201).json({
+      message: 'Images added to product',
+      count: createdImages.count
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Update image order
+router.put('/:id/images/reorder', authenticate, isAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { imageIds } = req.body; // Array of image IDs in new order
+
+    await Promise.all(
+      imageIds.map((imageId, index) =>
+        prisma.productImage.update({
+          where: { id: imageId },
+          data: { sortOrder: index }
+        })
+      )
+    );
+
+    res.status(200).json({ message: 'Image order updated' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Delete product image
+router.delete('/:productId/images/:imageId', authenticate, isAdmin, async (req, res) => {
+  try {
+    const { productId, imageId } = req.params;
+
+    const image = await prisma.productImage.findUnique({ where: { id: imageId } });
+    if (!image) {
+      return res.status(404).json({ error: 'Image not found' });
+    }
+
+    // Delete from Cloudinary
+    await cloudinary.uploader.destroy(image.publicId);
+
+    // Delete from database
+    await prisma.productImage.delete({ where: { id: imageId } });
+
+    res.status(200).json({ message: 'Image deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+```
+
+---
+
+#### Step 8: Create Frontend Image Upload Component
+
+Create `components/admin/ImageUpload.jsx`:
+```jsx
+import { useState, useCallback } from 'react';
+import { useDropzone } from 'react-dropzone';
+import axios from 'axios';
+
+export default function ImageUpload({ productId, onUploadComplete }) {
+  const [uploading, setUploading] = useState(false);
+  const [uploadedImages, setUploadedImages] = useState([]);
+
+  const onDrop = useCallback(async (acceptedFiles) => {
+    setUploading(true);
+
+    try {
+      // Upload images to server
+      const formData = new FormData();
+      acceptedFiles.forEach(file => {
+        formData.append('images', file);
+      });
+
+      const uploadResponse = await axios.post('/api/upload/images', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+
+      const images = uploadResponse.data.images;
+
+      // Associate images with product
+      if (productId) {
+        await axios.post(`/api/products/${productId}/images`, {
+          images: images.map(img => ({
+            imageUrl: img.imageUrl,
+            publicId: img.publicId
+          }))
+        }, {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        });
+      }
+
+      setUploadedImages([...uploadedImages, ...images]);
+      onUploadComplete && onUploadComplete(images);
+    } catch (error) {
+      console.error('Upload error:', error);
+      alert('Failed to upload images');
+    } finally {
+      setUploading(false);
+    }
+  }, [productId, uploadedImages, onUploadComplete]);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: {
+      'image/*': ['.jpeg', '.jpg', '.png', '.webp']
+    },
+    maxSize: 5242880, // 5MB
+    multiple: true
+  });
+
+  const handleDelete = async (imageId, publicId) => {
+    try {
+      await axios.delete(`/api/upload/image/${publicId}`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+
+      setUploadedImages(uploadedImages.filter(img => img.publicId !== publicId));
+    } catch (error) {
+      console.error('Delete error:', error);
+      alert('Failed to delete image');
+    }
+  };
+
+  return (
+    <div className="space-y-4">
+      <div
+        {...getRootProps()}
+        className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors ${
+          isDragActive ? 'border-blue-500 bg-blue-50' : 'border-gray-300 hover:border-gray-400'
+        }`}
+      >
+        <input {...getInputProps()} />
+        {uploading ? (
+          <p className="text-gray-600">Uploading...</p>
+        ) : isDragActive ? (
+          <p className="text-blue-600">Drop the images here...</p>
+        ) : (
+          <div>
+            <p className="text-gray-600">Drag & drop images here, or click to select</p>
+            <p className="text-sm text-gray-400 mt-2">Max 5MB per image, JPG/PNG/WEBP</p>
+          </div>
+        )}
+      </div>
+
+      {uploadedImages.length > 0 && (
+        <div className="grid grid-cols-4 gap-4">
+          {uploadedImages.map((image, index) => (
+            <div key={index} className="relative group">
+              <img
+                src={image.imageUrl}
+                alt={`Upload ${index + 1}`}
+                className="w-full h-32 object-cover rounded-lg"
+              />
+              <button
+                onClick={() => handleDelete(image.id, image.publicId)}
+                className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                ✕
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+---
+
+#### Step 9: Testing the Implementation
+
+1. **Test Single Image Upload:**
+   ```bash
+   curl -X POST http://localhost:3000/api/upload/image \
+     -H "Authorization: Bearer YOUR_TOKEN" \
+     -F "image=@/path/to/image.jpg"
+   ```
+
+2. **Test Multiple Images Upload:**
+   ```bash
+   curl -X POST http://localhost:3000/api/upload/images \
+     -H "Authorization: Bearer YOUR_TOKEN" \
+     -F "images=@/path/to/image1.jpg" \
+     -F "images=@/path/to/image2.jpg"
+   ```
+
+3. **Test Image Deletion:**
+   ```bash
+   curl -X DELETE http://localhost:3000/api/upload/image/PUBLIC_ID \
+     -H "Authorization: Bearer YOUR_TOKEN"
+   ```
+
+---
+
+#### Step 10: Best Practices & Optimization
+
+1. **Image Optimization:**
+   - Use Cloudinary transformations for automatic resizing
+   - Generate thumbnails for faster loading
+   - Use WebP format for better compression
+
+2. **Security:**
+   - Always validate file types on backend
+   - Implement rate limiting on upload endpoints
+   - Use signed uploads for sensitive operations
+
+3. **User Experience:**
+   - Show upload progress
+   - Display image previews immediately
+   - Allow drag-and-drop reordering
+   - Provide clear error messages
+
+4. **Performance:**
+   - Lazy load images on product pages
+   - Use Cloudinary's CDN for fast delivery
+   - Implement image caching strategies
+
+---

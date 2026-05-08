@@ -592,7 +592,6 @@
 - [ ] Integrate payment gateway with frontend
 - [ ] Connect order creation with backend
 - [ ] Implement payment webhook handling
-- [ ] Test complete purchase flow end-to-end
 - [ ] Verify email notifications are sent
 - [ ] Test order status updates
 - [ ] Validate inventory reduction
@@ -624,7 +623,6 @@
 - [ ] Inventory is updated on order creation
 - [ ] Email notifications are sent
 - [ ] Order history is accessible
-- [ ] Complete purchase flow tested end-to-end
 - [ ] Sprint Review demo is prepared
 - [ ] Documentation is updated
 

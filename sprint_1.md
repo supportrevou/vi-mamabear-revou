@@ -308,7 +308,6 @@
 - [ ] Configure API base URL in frontend
 - [ ] Set up Axios or Fetch client with interceptors
 - [ ] Implement JWT token storage (localStorage/cookies)
-- [ ] Test authentication flow end-to-end
 - [ ] Verify product data display on homepage
 - [ ] Test error handling and loading states
 
