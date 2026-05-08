@@ -12,7 +12,7 @@
 ## 🎯 Sprint Objectives
 
 1. Set up complete development environment and project infrastructure
-2. Establish visual brand presence through homepage and navigation
+2. Establish visual brand presence through homepage and navigation [(Access the asset here!)](https://drive.google.com/drive/u/0/folders/1CNB_KiPOQpEzu1kGCnJukyH51hY7GcJW)
 3. Implement secure user authentication system
 4. Create foundational product data structure and APIs
 5. Ensure all team members can run the project locally
