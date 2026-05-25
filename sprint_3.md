@@ -113,7 +113,7 @@
 - Order number prominently displayed
 - Complete order details shown (items, shipping, payment)
 - Payment instructions provided (if applicable)
-- Confirmation email sent to customer
+- Confirmation message shown (no email required)
 - "Track Order" and "Continue Shopping" buttons available
 
 ---
@@ -140,9 +140,9 @@
 
 **Acceptance Criteria:**
 - Order detail page shows current order status
-- Tracking number displayed when order is shipped
-- Order timeline shows status history
-- Estimated delivery date shown
+- Tracking number displayed when order is shipped (dummy data)
+- Order timeline shows status history (dummy data)
+- Estimated delivery date shown (dummy data)
 - Status updates: Pending → Paid → Processing → Shipped → Delivered
 
 ---
@@ -158,7 +158,7 @@
 - Confirmation modal before cancellation
 - Order status updated to "Cancelled"
 - Inventory restored for cancelled items
-- Cancellation email sent to customer
+- Cancellation notification shown (dummy data, no email)
 
 ---
 
@@ -188,9 +188,9 @@
 - Admin can change order status from order detail page
 - Status options: Pending, Paid, Processing, Shipped, Delivered, Cancelled
 - Admin can add notes when updating status
-- Email notification sent to customer on status change
+- Status notification shown to customer (dummy data, no email)
 - Status change logged in order history
-- Tracking number can be added when marking as shipped
+- Tracking number can be added when marking as shipped (dummy data)
 
 ---
 
@@ -240,21 +240,6 @@
 - Low stock alerts for admin
 - Prevent adding out-of-stock items to cart
 - Database transactions ensure data consistency
-
----
-
-**US-3.15: Set Up Email Notifications**
-- **As a** developer
-- **I want to** implement email notification system
-- **So that** customers receive order updates
-
-**Acceptance Criteria:**
-- Email service configured (SendGrid/AWS SES)
-- Email templates created (order confirmation, payment, shipping, etc.)
-- Emails sent asynchronously (queue system)
-- Email sending errors logged
-- Email delivery tracked
-- Unsubscribe option included
 
 ---
 
@@ -453,7 +438,7 @@
 - [ ] Build payment webhook handler
   - Verify webhook signature
   - Update order status based on payment status
-  - Send confirmation email
+  - Show confirmation notification (no email required)
   - Update inventory
   - Log payment events
 - [ ] Implement payment security
@@ -498,7 +483,7 @@
   - Create order and order items
   - Reduce product inventory
   - Create payment transaction
-  - Send order confirmation email
+  - Show order confirmation (no email required)
   - Clear user cart
 - [ ] Implement inventory management
   - Reduce stock on order creation
@@ -556,31 +541,20 @@
   - Optimize cart queries (eager loading)
   - Implement cart item deduplication
 
-#### 5. Email Notification System
-- [ ] Set up email service (SendGrid, AWS SES, or Nodemailer)
-- [ ] Create email templates
-  - Order confirmation email
-  - Payment confirmation email
-  - Shipping notification email
-  - Delivery confirmation email
-  - Order cancellation email
-- [ ] Implement email service module
-  - Send email function
-  - Template rendering
-  - Error handling and retry logic
-- [ ] Create email queue system (optional but recommended)
-  - Use Bull or similar queue library
-  - Handle email sending asynchronously
-  - Retry failed emails
-- [ ] Implement email triggers
-  - Send on order creation
-  - Send on payment confirmation
-  - Send on order status change
-  - Send on order cancellation
-- [ ] Add email logging
-  - Track sent emails
-  - Log email failures
-  - Monitor email delivery rates
+#### 5. Admin Order Management API
+- [ ] Implement admin order endpoints:
+  - `GET /api/admin/orders` - Get all orders (with filters)
+  - `GET /api/admin/orders/:id` - Get order details
+  - `PUT /api/admin/orders/:id/status` - Update order status
+  - `PUT /api/admin/orders/:id/tracking` - Add tracking number (dummy data)
+- [ ] Add order filtering and search
+  - Filter by status, date range, customer
+  - Search by order number
+  - Pagination support
+- [ ] Implement order statistics
+  - Total orders
+  - Revenue metrics
+  - Order status breakdown
 
 ---
 
@@ -592,10 +566,11 @@
 - [ ] Integrate payment gateway with frontend
 - [ ] Connect order creation with backend
 - [ ] Implement payment webhook handling
-- [ ] Verify email notifications are sent
+- [ ] Verify order confirmation notifications are shown
 - [ ] Test order status updates
 - [ ] Validate inventory reduction
 - [ ] Test error scenarios (payment failure, out of stock, etc.)
+- [ ] Test tracking number display (dummy data)
 
 ---
 
@@ -621,7 +596,7 @@
 - [ ] Payment gateway is working (sandbox)
 - [ ] Orders are created successfully
 - [ ] Inventory is updated on order creation
-- [ ] Email notifications are sent
+- [ ] Order confirmation notifications are shown
 - [ ] Order history is accessible
 - [ ] Sprint Review demo is prepared
 - [ ] Documentation is updated
@@ -689,7 +664,6 @@
 
 ### Tools
 - **Payment Testing:** Midtrans Sandbox, Xendit Test Mode
-- **Email Testing:** Mailtrap, MailHog
 - **API Testing:** Postman, Insomnia
 - **Load Testing:** Artillery, k6 (for future)
 
@@ -715,7 +689,7 @@
 - [ ] Order review shows correct information
 - [ ] Order creation succeeds
 - [ ] Inventory reduces correctly
-- [ ] Email notification sent
+- [ ] Order confirmation notification shown
 
 ### Payment Testing
 - [ ] Test all payment methods in sandbox
@@ -732,7 +706,7 @@
 - [ ] Order status updates work
 - [ ] Order cancellation works
 - [ ] Invoice generation works
-- [ ] Tracking information displays
+- [ ] Tracking information displays (dummy data)
 
 ---
 
@@ -761,13 +735,12 @@
 - [ ] Show checkout flow with shipping calculation
 - [ ] Demonstrate payment gateway integration (sandbox)
 - [ ] Show order creation and confirmation
-- [ ] Demo email notifications
+- [ ] Demo order confirmation notifications (no email)
 - [ ] Show order history and details
 - [ ] Demonstrate inventory reduction
 - [ ] Show mobile checkout experience
 - [ ] Review payment security measures
 - [ ] Discuss any challenges faced
-- [ ] Present Sprint 4 preview (admin panel & launch)
 
 ---
 
@@ -778,7 +751,7 @@ At the end of Sprint 3, the Mamabear e-commerce platform should have a **fully f
 2. Proceed through a smooth checkout process
 3. Select shipping methods with real-time cost calculation
 4. Complete payment through multiple payment methods
-5. Receive order confirmation via email
-6. View their order history and track orders
+5. Receive order confirmation notification
+6. View their order history and track orders (with dummy tracking data)
 
 This sprint transforms the platform from a product catalog into a **revenue-generating e-commerce system**! 🚀
