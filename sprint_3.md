@@ -162,9 +162,24 @@
 
 ---
 
+**US-3.10: Manage Saved Addresses**
+- **As a** registered customer
+- **I want to** save and manage multiple shipping addresses
+- **So that** I can checkout faster without re-entering address every time
+
+**Acceptance Criteria:**
+- Customer dapat melihat daftar alamat tersimpan di halaman profil
+- Customer dapat menambah alamat baru (maks 5 alamat)
+- Customer dapat mengedit alamat yang sudah ada
+- Customer dapat menghapus alamat (kecuali jika hanya tersisa 1)
+- Customer dapat menandai satu alamat sebagai alamat default
+- Saat checkout, customer dapat memilih dari daftar alamat tersimpan atau input alamat baru
+
+---
+
 ### Admin User Stories
 
-**US-3.10: View All Orders**
+**US-3.11: View All Orders**
 - **As an** admin
 - **I want to** view all customer orders
 - **So that** I can manage order fulfillment
@@ -179,7 +194,7 @@
 
 ---
 
-**US-3.11: Update Order Status**
+**US-3.12: Update Order Status**
 - **As an** admin
 - **I want to** update order status
 - **So that** customers are informed about their order progress
@@ -196,7 +211,7 @@
 
 ### Developer User Stories
 
-**US-3.12: Integrate Payment Gateway**
+**US-3.13: Integrate Payment Gateway**
 - **As a** developer
 - **I want to** integrate a payment gateway
 - **So that** customers can make secure online payments
@@ -212,7 +227,7 @@
 
 ---
 
-**US-3.13: Integrate Shipping API**
+**US-3.14: Integrate Shipping API**
 - **As a** developer
 - **I want to** integrate RajaOngkir shipping API
 - **So that** customers can see real-time shipping costs
@@ -228,7 +243,7 @@
 
 ---
 
-**US-3.14: Implement Inventory Management**
+**US-3.15: Implement Inventory Management**
 - **As a** developer
 - **I want to** implement inventory tracking
 - **So that** stock levels are accurate and overselling is prevented
@@ -541,7 +556,31 @@
   - Optimize cart queries (eager loading)
   - Implement cart item deduplication
 
-#### 5. Admin Order Management API
+#### 5. Address Management API
+
+- [ ] Design Address database schema
+  - id, userId, label (e.g. "Rumah", "Kantor"), recipientName, phone
+  - addressLine, city, province, postalCode
+  - isDefault, createdAt, updatedAt
+- [ ] Create Prisma migration for addresses table
+- [ ] Implement Address API endpoints:
+  - `GET /api/users/addresses` - Get all addresses milik user yang login
+  - `POST /api/users/addresses` - Tambah alamat baru
+  - `PUT /api/users/addresses/:id` - Update alamat
+  - `DELETE /api/users/addresses/:id` - Hapus alamat
+  - `PUT /api/users/addresses/:id/default` - Set alamat sebagai default
+- [ ] Implement address business logic
+  - Pastikan hanya pemilik alamat yang bisa edit/delete
+  - Saat default address dihapus, set alamat lain sebagai default (jika ada)
+  - Batasi jumlah alamat per user (maks 5)
+- [ ] Integrate dengan checkout flow
+  - Saat checkout, ambil daftar alamat user untuk dipilih
+  - Saat order dibuat, snapshot detail alamat ke tabel Order
+
+---
+
+#### 6. Admin Order Management API
+
 - [ ] Implement admin order endpoints:
   - `GET /api/admin/orders` - Get all orders (with filters)
   - `GET /api/admin/orders/:id` - Get order details
