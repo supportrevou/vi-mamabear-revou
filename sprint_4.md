@@ -12,14 +12,10 @@
 ## 🎯 Sprint Objectives
 
 1. Build comprehensive admin dashboard for business management
-2. Implement role-based access control (RBAC) for admin users
-3. Develop sales reporting and analytics features
-4. Polish and optimize UI for all devices (responsive design)
-5. Conduct thorough testing and bug fixing
-6. Optimize SEO for better search engine visibility
-7. Deploy to production environment
-8. Configure domain and SSL certificate
-9. Prepare for official launch
+2. Implement RBAC and admin access control
+3. Develop sales reporting, customer management, and site settings
+4. Polish UI for mobile/tablet and optimize SEO
+5. Deploy to production and go live
 
 ---
 
@@ -27,825 +23,337 @@
 
 ### Admin User Stories
 
-**US-4.1: View Dashboard Overview**
-- **As an** admin
-- **I want to** see key business metrics at a glance
-- **So that** I can monitor business performance
-
-**Acceptance Criteria:**
-- Dashboard displays total sales, order count, customer count, and product count
-- Sales chart shows revenue trends (daily/weekly/monthly)
-- Recent orders table shows latest 10 orders
-- Low stock alerts displayed
-- Top selling products shown
-- Dashboard is responsive on all devices
+**US-4.1: View Dashboard Overview**  
+As an admin, I want to see key business metrics at a glance, so that I can monitor store performance.  
+**AC:** Dashboard shows total sales, orders, customers, products; sales chart (daily/weekly/monthly); recent orders; low stock alerts; top selling products.
 
 ---
 
-**US-4.2: Manage Products (Advanced)**
-- **As an** admin
-- **I want to** efficiently manage all products
-- **So that** I can keep the product catalog up-to-date
-
-**Acceptance Criteria:**
-- Product list page with search, filter, and sort
-- Bulk actions (delete, publish/unpublish)
-- Product create/edit form with all fields
-- Multiple image upload with drag-and-drop reordering
-- Variant management interface
-- CSV import/export functionality
-- Product duplication feature
-- SEO fields for each product
+**US-4.2: Manage Products (Advanced)**  
+As an admin, I want to efficiently manage all products, so that I can keep the catalog up-to-date.  
+**AC:** Product list with search, filter, sort, and bulk actions; create/edit form with image management and variants; CSV export; product duplication.
 
 ---
 
-**US-4.3: Manage Orders (Advanced)**
-- **As an** admin
-- **I want to** efficiently process and manage orders
-- **So that** customers receive their orders on time
-
-**Acceptance Criteria:**
-- Order list with advanced filtering and search
-- Quick status update from list view
-- Detailed order view with all information
-- Add tracking number functionality
-- Print invoice and packing slip
-- Order timeline showing status history
-- Bulk status updates
-- Export orders to CSV
+**US-4.3: Manage Orders (Advanced)**  
+As an admin, I want to process and track orders efficiently, so that customers receive their orders on time.  
+**AC:** Order list with search and filtering; order detail with tracking, invoice print, and status history; bulk status updates.
 
 ---
 
-**US-4.4: Manage Categories**
-- **As an** admin
-- **I want to** organize products into categories
-- **So that** customers can easily browse products
-
-**Acceptance Criteria:**
-- Category list with hierarchical tree view
-- Drag-and-drop category reordering
-- Create/edit category form
-- Category image upload
-- Parent category selection
-- SEO fields for categories
-- Activate/deactivate categories
+**US-4.4: Manage Categories**  
+As an admin, I want to organize products into categories, so that customers can browse easily.  
+**AC:** Hierarchical category tree view; create/edit form with image upload and SEO fields; activate/deactivate categories.
 
 ---
 
-**US-4.5: View Sales Reports**
-- **As an** admin
-- **I want to** view sales reports and analytics
-- **So that** I can make informed business decisions
-
-**Acceptance Criteria:**
-- Sales report with date range selector
-- Total sales, order count, and average order value displayed
-- Sales chart (line/bar chart)
-- Sales breakdown by category
-- Sales breakdown by product
-- Top selling products report
-- Export reports to CSV/PDF
-- Data visualization with interactive charts
+**US-4.5: View Sales Reports**  
+As an admin, I want to view sales reports and analytics, so that I can make informed business decisions.  
+**AC:** Sales report with date range, chart, and breakdown by category/product; top selling products; CSV export.
 
 ---
 
-**US-4.6: Manage Customers**
-- **As an** admin
-- **I want to** view customer information
-- **So that** I can provide better customer service
-
-**Acceptance Criteria:**
-- Customer list with search and filter
-- Customer detail page with order history
-- Total spent and average order value per customer
-- Customer registration date
-- Saved addresses
-- Export customer list to CSV
+**US-4.6: Manage Customers**  
+As an admin, I want to view customer information and manage accounts, so that I can provide better service.  
+**AC:** Customer list with search, sort by total spent/total orders; customer detail with order history and saved addresses; block/reactivate accounts; CSV export.
 
 ---
 
-**US-4.7: Control Admin Access**
-- **As a** super admin
-- **I want to** manage admin user accounts
-- **So that** I can control who has access to the admin panel
-
-**Acceptance Criteria:**
-- Create new admin users
-- Assign roles (admin, super admin)
-- View list of all admin users
-- Deactivate/delete admin users
-- Admin activity logging
-- Prevent self-role-change
-- Prevent deleting last super admin
+**US-4.7: Control Admin Access**  
+As a super admin, I want to manage admin user accounts, so that I can control who has access to the admin panel.  
+**AC:** Create/deactivate admin users; assign roles (admin, super_admin); all admin actions logged; prevent self-role-change and deleting last super admin.
 
 ---
 
-**US-4.8: Configure Site Settings**
-- **As an** admin
-- **I want to** configure site-wide settings
-- **So that** I can customize the store
-
-**Acceptance Criteria:**
-- Settings page with organized sections
-- Update site name and description
-- Configure contact information
-- Set social media links
-- Configure shipping origin address
-- Set tax rate and currency
-- Update email settings
-- Configure payment gateway settings
-- Enable/disable maintenance mode
+**US-4.8: Configure Site Settings**  
+As an admin, I want to configure site-wide settings, so that I can customize the store without code changes.  
+**AC:** Settings page with: site name, contact info, social links, shipping origin, tax rate, currency, maintenance mode.
 
 ---
 
 ### Customer User Stories
 
-**US-4.9: Mobile Shopping Experience**
-- **As a** mobile customer
-- **I want to** have a smooth shopping experience on my phone
-- **So that** I can shop conveniently anywhere
-
-**Acceptance Criteria:**
-- All pages are fully responsive on mobile devices
-- Touch-friendly interface (minimum 44x44px tap targets)
-- Mobile-optimized navigation (hamburger menu)
-- Fast page load times on mobile
-- Mobile-friendly forms and checkout
-- Images optimized for mobile
-- Tested on iOS and Android devices
+**US-4.9: Mobile Shopping Experience**  
+As a mobile customer, I want a smooth shopping experience on my phone, so that I can shop conveniently anywhere.  
+**AC:** All pages responsive on mobile; touch-friendly (min 44x44px targets); fast load times; tested on iOS and Android.
 
 ---
 
-**US-4.10: Discover Store via Search Engines**
-- **As a** potential customer
-- **I want to** find the store through search engines
-- **So that** I can discover products I'm looking for
-
-**Acceptance Criteria:**
-- SEO meta tags on all pages
-- Unique title and description for each product
-- Open Graph tags for social sharing
-- Structured data (Schema.org) implemented
-- Sitemap.xml generated and submitted
-- Robots.txt configured
-- Fast page load speed (Lighthouse score > 90)
-- Google Analytics tracking implemented
-
----
-
-### Developer User Stories
-
-**US-4.11: Deploy to Production**
-- **As a** developer
-- **I want to** deploy the application to production
-- **So that** it's accessible to customers
-
-**Acceptance Criteria:**
-- Production database set up and migrated
-- Backend deployed to production server
-- Frontend deployed to Vercel
-- Environment variables configured
-- Domain configured and pointing to application
-- SSL certificate installed and working
-- HTTPS enforced
-- Monitoring and logging set up
-
----
-
-**US-4.12: Ensure Application Security**
-- **As a** developer
-- **I want to** implement security best practices
-- **So that** customer data is protected
-
-**Acceptance Criteria:**
-- Security audit completed
-- All security headers implemented
-- HTTPS enforced in production
-- Input validation on all endpoints
-- SQL injection prevention verified
-- XSS protection implemented
-- CORS properly configured
-- Rate limiting enabled
-- Security monitoring set up
-
----
-
-**US-4.13: Monitor Application Performance**
-- **As a** developer
-- **I want to** monitor application performance and errors
-- **So that** I can quickly identify and fix issues
-
-**Acceptance Criteria:**
-- Error tracking set up (Sentry or similar)
-- Server health monitoring configured
-- Database performance monitoring
-- API endpoint monitoring
-- Alerts configured for critical issues
-- Log aggregation set up
-- Performance metrics tracked
-
----
-
-**US-4.14: Document the System**
-- **As a** developer
-- **I want to** have comprehensive documentation
-- **So that** future maintenance and updates are easier
-
-**Acceptance Criteria:**
-- API documentation complete and up-to-date
-- Database schema documented
-- Architecture documentation created
-- Deployment guide written
-- Environment configuration documented
-- Troubleshooting guide created
-- Admin user guide completed
-- Customer FAQ created
+**US-4.10: Discover Store via Search Engines**  
+As a potential customer, I want to find the store through search engines, so that I can discover products I'm looking for.  
+**AC:** Meta tags, Open Graph, and Schema.org structured data on all pages; sitemap.xml and robots.txt configured; Google Analytics tracking purchases.
 
 ---
 
 ### Business User Stories
 
-**US-4.15: Launch the Store**
-- **As a** business owner
-- **I want to** launch the e-commerce store
-- **So that** I can start selling products online
-
-**Acceptance Criteria:**
-- All features tested and working
-- All critical bugs fixed
-- Production deployment successful
-- Domain and SSL configured
-- Payment gateway in production mode
-- Initial products and categories added
-- Admin trained on using the system
-- Support plan in place
-- Launch announcement prepared
-- Store is live and accessible to customers
+**US-4.15: Launch the Store**  
+As a business owner, I want to launch the e-commerce store, so that I can start selling online.  
+**AC:** All features tested; production deployed with domain, SSL, and monitoring active; payment gateway in production mode; admin trained on the system.
 
 ---
 
 ## 📋 Sprint Backlog
 
-### Front-End Development Tasks
+### 1. Admin Dashboard
 
-#### 1. Admin Dashboard UI
-- [ ] Create admin layout with sidebar navigation
-  - Dashboard
-  - Products
-  - Orders
-  - Categories
-  - Customers
-  - Reports
-  - Settings
-- [ ] Build dashboard overview page (`/admin/dashboard`)
-  - Key metrics cards (total sales, orders, customers, products)
-  - Sales chart (daily/weekly/monthly)
-  - Recent orders table
-  - Low stock alerts
-  - Top selling products
-  - Revenue trends
-- [ ] Implement admin authentication
-  - Admin login page (separate from customer login)
-  - Role verification
-  - Redirect non-admin users
-  - Session management
-- [ ] Create responsive admin layout
-  - Collapsible sidebar on mobile
-  - Hamburger menu
-  - Responsive tables
-  - Mobile-friendly forms
+**Goal:** Real-time overview of business performance.
 
-#### 2. Product Management UI
-- [ ] Create product list page (`/admin/products`)
-  - Searchable product table
-  - Filter by category, status, stock
-  - Sort by name, price, date
-  - Bulk actions (delete, publish/unpublish)
-  - Pagination
-  - "Add New Product" button
-- [ ] Build product create/edit form (`/admin/products/new`, `/admin/products/[id]/edit`)
-  - Product information (name, description, SKU)
-  - Pricing (regular price, sale price)
-  - Inventory (stock, low stock threshold)
-  - Category selection
-  - Product images upload (multiple)
-  - Image reordering (drag and drop)
-  - Product variants management
-  - SEO fields (meta title, description)
-  - Publish/draft toggle
-- [ ] Implement product image management
-  - Multiple image upload
-  - Image preview
-  - Set featured image
-  - Delete image
-  - Drag-and-drop reordering
-- [ ] Create product variant manager
-  - Add variant types (size, color, etc.)
-  - Add variant values
-  - Set variant-specific pricing and stock
-  - Bulk variant creation
-- [ ] Add bulk product import
-  - CSV upload interface
-  - Field mapping
-  - Import preview
-  - Error handling and validation
-  - Import progress indicator
+**Tasks:**
 
-#### 3. Order Management UI
-- [ ] Create order list page (`/admin/orders`)
-  - Searchable order table
-  - Filter by status, date, payment status
-  - Sort by date, total, status
-  - Order status badges
-  - Quick status update
-  - Export to CSV
-  - Pagination
-- [ ] Build order detail page (`/admin/orders/[id]`)
-  - Order information (number, date, status)
-  - Customer information
-  - Order items list
-  - Shipping address
-  - Shipping method and tracking
-  - Payment information
-  - Order timeline/history
-  - Status update dropdown
-  - Add tracking number form
-  - Print invoice button
-  - Print packing slip button
-  - Cancel order button
-  - Refund button (if applicable)
-- [ ] Implement order status management
-  - Status update modal
-  - Add notes to status change
-  - Email notification toggle
-  - Bulk status update
-- [ ] Create invoice and packing slip templates
-  - Printable invoice layout
-  - Packing slip layout
-  - Company branding
-  - Order details
-  - Print-friendly CSS
-
-#### 4. Category Management UI
-- [ ] Create category list page (`/admin/categories`)
-  - Hierarchical category tree view
-  - Drag-and-drop reordering
-  - Quick edit inline
-  - Delete category
-  - "Add New Category" button
-- [ ] Build category create/edit form (`/admin/categories/new`, `/admin/categories/[id]/edit`)
-  - Category name and slug
-  - Parent category selection
-  - Category description
-  - Category image upload
-  - SEO fields
-  - Display order
-  - Active/inactive toggle
-- [ ] Implement category hierarchy visualization
-  - Tree view with expand/collapse
-  - Indentation for subcategories
-  - Move category to different parent
-
-#### 5. Customer Management UI
-- [ ] Create customer list page (`/admin/customers`)
-  - Customer table with search
-  - Filter by registration date, order count
-  - Sort by name, email, total spent
-  - View customer details
-  - Export to CSV
-- [ ] Build customer detail page (`/admin/customers/[id]`)
-  - Customer information
-  - Order history
-  - Total spent
-  - Average order value
-  - Last order date
-  - Registered addresses
-  - Account status (active/blocked)
-
-#### 6. Reports & Analytics UI
-- [ ] Create sales report page (`/admin/reports/sales`)
-  - Date range selector
-  - Sales summary (total sales, orders, average order value)
-  - Sales chart (line/bar chart)
-  - Sales by category
-  - Sales by product
-  - Export to CSV/PDF
-- [ ] Build product performance report
-  - Top selling products
-  - Low performing products
-  - Stock levels
-  - Product views (if tracking implemented)
-- [ ] Create customer analytics
-  - New customers over time
-  - Customer lifetime value
-  - Repeat customer rate
-  - Customer acquisition chart
-- [ ] Implement data visualization
-  - Use Chart.js or Recharts
-  - Interactive charts
-  - Responsive charts
-  - Export chart as image
-
-#### 7. Responsive UI Polishing
-- [ ] Audit all pages for mobile responsiveness
-  - Homepage
-  - Product listing
-  - Product detail
-  - Cart
-  - Checkout
-  - Account pages
-  - Admin pages
-- [ ] Optimize for tablet devices (768px - 1024px)
-- [ ] Test on various screen sizes
-  - Mobile: 320px, 375px, 414px
-  - Tablet: 768px, 1024px
-  - Desktop: 1280px, 1440px, 1920px
-- [ ] Fix responsive issues
-  - Layout breaks
-  - Overlapping elements
-  - Unreadable text
-  - Inaccessible buttons
-- [ ] Optimize touch interactions for mobile
-  - Larger tap targets (min 44x44px)
-  - Swipe gestures where appropriate
-  - Mobile-friendly forms
-- [ ] Test on real devices
-  - iOS (iPhone)
-  - Android (various manufacturers)
-  - Tablets (iPad, Android tablets)
-
-#### 8. SEO Optimization
-- [ ] Implement SEO meta tags
-  - Title tags (unique for each page)
-  - Meta descriptions
-  - Open Graph tags (for social sharing)
-  - Twitter Card tags
-  - Canonical URLs
-- [ ] Create dynamic meta tags for products
-  - Product name in title
-  - Product description in meta description
-  - Product images in OG tags
-- [ ] Implement structured data (Schema.org)
-  - Product schema
-  - Breadcrumb schema
-  - Organization schema
-  - Review schema (prepare for future)
-- [ ] Generate sitemap.xml
-  - Include all public pages
-  - Update automatically
-  - Submit to Google Search Console
-- [ ] Create robots.txt
-  - Allow/disallow appropriate paths
-  - Link to sitemap
-- [ ] Optimize page load speed
-  - Image lazy loading
-  - Code splitting
-  - Minimize bundle size
-  - Optimize fonts
-- [ ] Implement analytics
-  - Google Analytics 4
-  - Track page views
-  - Track conversions
-  - Track e-commerce events
-
-#### 9. Final Bug Fixing & QA
-- [ ] Conduct comprehensive testing
-  - Functional testing (all features)
-  - Cross-browser testing (Chrome, Firefox, Safari, Edge)
-  - Mobile device testing
-  - Performance testing
-  - Security testing
-- [ ] Fix identified bugs
-  - Prioritize by severity (P0, P1, P2, P3)
-  - Fix critical bugs first
-  - Document known issues
-- [ ] User acceptance testing (UAT)
-  - Test with client/stakeholders
-  - Gather feedback
-  - Make necessary adjustments
-- [ ] Accessibility audit
-  - Keyboard navigation
-  - Screen reader compatibility
-  - Color contrast
-  - ARIA labels
-- [ ] Performance optimization
-  - Lighthouse audit
-  - Fix performance issues
-  - Optimize images
-  - Minimize JavaScript
+- [FE] Build admin layout: sidebar navigation (Dashboard, Products, Orders, Categories, Customers, Reports, Users, Settings), collapsible sidebar on mobile, hamburger menu, responsive tables and forms
+- [FE] Build dashboard overview page (`/admin/dashboard`): metrics cards (total sales, orders, customers, products), sales chart (daily/weekly/monthly), recent orders table, low stock alerts, top selling products
+- [FE] Admin authentication: separate admin login page, role verification, redirect non-admin users, session management
+- [BE] `GET /api/admin/reports/dashboard` — return: total revenue, order count, customer count, product count, recent orders, low stock products, top selling products
+- [FE+BE] Connect dashboard UI with `GET /api/admin/reports/dashboard`
 
 ---
 
-### Back-End Development Tasks
+### 2. Product Management (Advanced)
 
-#### 1. Admin Access Control (RBAC)
-- [ ] Enhance User schema with role field
-  - Roles: customer, admin, super_admin
-  - Permissions system (optional, for granular control)
-- [ ] Create admin authentication middleware
-  - Verify user is authenticated
-  - Check user role
-  - Restrict access to admin routes
-- [ ] Implement role-based permissions
-  - Admin can manage products, orders, categories
-  - Super admin can manage admins
-  - Customer can only access customer features
-- [ ] Create admin user management endpoints:
-  - `GET /api/admin/users` - List all users (admin only)
-  - `GET /api/admin/users/:id` - Get user details
-  - `PUT /api/admin/users/:id/role` - Update user role (super admin only)
-  - `POST /api/admin/users` - Create admin user (super admin only)
-  - `DELETE /api/admin/users/:id` - Delete user (super admin only)
-- [ ] Implement admin activity logging
-  - Log all admin actions
-  - Track who made changes
-  - Timestamp all actions
-- [ ] Add admin-specific validation
-  - Prevent self-role-change
-  - Prevent deleting last super admin
-  - Validate role assignments
+**Goal:** Efficient full-lifecycle management of the product catalog.
 
-#### 2. Sales Reporting API
-- [ ] Design Report aggregation queries
-  - Daily sales
-  - Weekly sales
-  - Monthly sales
-  - Sales by category
-  - Sales by product
-  - Sales by customer
-- [ ] Implement reporting endpoints:
-  - `GET /api/admin/reports/sales` - Sales report with date range
-  - `GET /api/admin/reports/products` - Product performance report
-  - `GET /api/admin/reports/customers` - Customer analytics
-  - `GET /api/admin/reports/dashboard` - Dashboard summary
-- [ ] Build sales analytics logic
-  - Total revenue calculation
-  - Order count
-  - Average order value
-  - Revenue trends (growth/decline)
-  - Top selling products
-  - Top customers
-- [ ] Implement data aggregation
-  - Use database aggregation functions
-  - Optimize queries for performance
-  - Cache report results (with TTL)
-- [ ] Create export functionality
-  - Export reports to CSV
-  - Export reports to PDF (optional)
-  - Generate downloadable files
-- [ ] Add report filtering
-  - Filter by date range
-  - Filter by category
-  - Filter by product
-  - Filter by customer
-  - Filter by status
+**Tasks:**
 
-#### 3. Enhanced Order Management
-- [ ] Implement order status update endpoint
-  - `PUT /api/admin/orders/:id/status` - Update order status
-  - Validate status transitions
-  - Add status change notes
-  - Send email notification
-  - Log status history
-- [ ] Create tracking number management
-  - `PUT /api/admin/orders/:id/tracking` - Add/update tracking number
-  - Validate tracking number format
-  - Send tracking email to customer
-- [ ] Implement order search and filtering
-  - Search by order number, customer name, email
-  - Filter by status, date range, payment status
-  - Sort by various fields
-  - Pagination
-- [ ] Build invoice generation
-  - `GET /api/admin/orders/:id/invoice` - Generate invoice PDF
-  - Include all order details
-  - Company branding
-  - Invoice numbering system
-- [ ] Create order analytics
-  - Order count by status
-  - Revenue by time period
-  - Average processing time
-  - Fulfillment rate
-
-#### 4. Product Management Enhancements
-- [ ] Implement bulk product operations
-  - `POST /api/admin/products/bulk-update` - Bulk update products
-  - `POST /api/admin/products/bulk-delete` - Bulk delete products
-  - `POST /api/admin/products/bulk-publish` - Bulk publish/unpublish
-- [ ] Create product import/export
-  - `POST /api/admin/products/import` - Import products from CSV
-  - `GET /api/admin/products/export` - Export products to CSV
-  - Validate CSV format
-  - Handle import errors
-  - Map CSV columns to product fields
-- [ ] Implement product analytics
-  - `GET /api/admin/products/:id/analytics` - Product performance
-  - Track product views (implement view tracking)
-  - Track add-to-cart rate
-  - Track conversion rate
-- [ ] Add product duplication
-  - `POST /api/admin/products/:id/duplicate` - Duplicate product
-  - Copy all product data
-  - Generate new SKU
-  - Mark as draft
-
-#### 5. System Configuration & Settings
-- [ ] Create settings database schema
-  - id, key, value, type, description
-  - Store site-wide settings
-- [ ] Implement settings API:
-  - `GET /api/admin/settings` - Get all settings
-  - `GET /api/admin/settings/:key` - Get specific setting
-  - `PUT /api/admin/settings/:key` - Update setting
-- [ ] Add configurable settings
-  - Site name and description
-  - Contact information
-  - Social media links
-  - Shipping origin address
-  - Tax rate
-  - Currency
-  - Email settings
-  - Payment gateway settings
-  - Maintenance mode toggle
-- [ ] Implement settings validation
-  - Validate setting types
-  - Validate required settings
-  - Sanitize input
-
-#### 6. Production Deployment Preparation
-- [ ] Set up production database
-  - Create production PostgreSQL instance
-  - Configure database credentials
-  - Run migrations
-  - Seed initial data (categories, admin user)
-- [ ] Configure production environment variables
-  - Database connection string
-  - JWT secret
-  - API keys (payment, shipping, email, storage)
-  - CORS origins
-  - Node environment (production)
-- [ ] Set up production server
-  - Choose hosting provider (Railway, Render, DigitalOcean)
-  - Configure server resources
-  - Set up Node.js runtime
-  - Configure process manager (PM2)
-- [ ] Implement production logging
-  - Use production-grade logger (Winston)
-  - Log to file and/or external service
-  - Set up error tracking (Sentry)
-  - Configure log rotation
-- [ ] Set up monitoring
-  - Server health monitoring
-  - Database monitoring
-  - API endpoint monitoring
-  - Set up alerts for critical issues
-- [ ] Configure backup strategy
-  - Automated database backups
-  - Backup retention policy
-  - Test backup restoration
-- [ ] Implement rate limiting (production)
-  - Stricter rate limits
-  - IP-based limiting
-  - Protect against DDoS
-
-#### 7. Frontend Deployment
-- [ ] Deploy frontend to Vercel
-  - Connect GitHub repository
-  - Configure build settings
-  - Set environment variables
-  - Configure custom domain
-- [ ] Configure production API endpoints
-  - Update API base URL
-  - Configure CORS
-  - Test API connectivity
-- [ ] Set up SSL certificate
-  - Configure HTTPS
-  - Force HTTPS redirect
-  - Test SSL configuration
-- [ ] Configure CDN
-  - Optimize static asset delivery
-  - Configure caching headers
-  - Test CDN performance
-- [ ] Set up domain
-  - Purchase domain (if not already)
-  - Configure DNS records
-  - Point domain to Vercel
-  - Configure www redirect
-
-#### 8. Security Hardening
-- [ ] Conduct security audit
-  - Review authentication implementation
-  - Check authorization on all endpoints
-  - Verify input validation
-  - Check for SQL injection vulnerabilities
-  - Check for XSS vulnerabilities
-  - Review CORS configuration
-- [ ] Implement security headers
-  - Content-Security-Policy
-  - X-Frame-Options
-  - X-Content-Type-Options
-  - Strict-Transport-Security
-  - X-XSS-Protection
-- [ ] Configure HTTPS
-  - Force HTTPS in production
-  - Use secure cookies
-  - Configure HSTS
-- [ ] Implement request validation
-  - Validate all inputs
-  - Sanitize user data
-  - Use parameterized queries
-- [ ] Set up security monitoring
-  - Monitor failed login attempts
-  - Track suspicious activities
-  - Set up alerts for security events
-- [ ] Create security documentation
-  - Security best practices
-  - Incident response plan
-  - Data protection policies
+- [FE] Build product list page (`/admin/products`): searchable table, filter by category/status/stock, sort by name/price/date, bulk actions (delete, publish/unpublish), pagination
+- [FE] Build product create/edit form: name, description, SKU, price, stock, category, multiple image upload (drag-and-drop reorder), variants, SEO fields (meta title, meta description), publish/draft toggle
+- [FE] Product image management: upload, preview, set featured image, delete, drag-and-drop reorder
+- [FE] Product variant manager: add types (size, color), add values, set variant-specific price and stock
+- [BE] Add `metaTitle`, `metaDescription` columns to Product schema via Prisma migration
+- [BE] `POST /api/admin/products/bulk-delete` — bulk delete products
+- [BE] `POST /api/admin/products/bulk-publish` — bulk publish/unpublish
+- [BE] `GET /api/admin/products/export` — export to CSV (name, SKU, price, stock, category)
+- [BE] `POST /api/admin/products/:id/duplicate` — duplicate product: reference existing image URLs (do not copy files in cloud storage), generate new SKU, mark as draft
+- [FE+BE] Connect product list UI with bulk operations and export endpoints
 
 ---
 
-## 🔗 Integration Tasks
+### 3. Order Management (Advanced)
 
-### Front-End + Back-End Integration
-- [ ] Integrate admin dashboard with reporting APIs
-- [ ] Connect product management UI with enhanced product APIs
-- [ ] Integrate order management UI with order APIs
-- [ ] Connect category management with category APIs
-- [ ] Test admin authentication and authorization
-- [ ] Verify all admin features work correctly
-- [ ] Test on staging environment
-- [ ] Conduct UAT with client
+**Goal:** Efficient order processing with tracking, invoicing, and status history.
+
+**Tasks:**
+
+- [FE] Build order list page (`/admin/orders`): searchable table, filter by status/date/payment, sort, status badges, quick status update, CSV export, pagination
+- [FE] Build order detail page (`/admin/orders/[id]`): order info, customer info, items, shipping address, payment info, order timeline/history, status update dropdown, add tracking number form, print invoice button, cancel order button
+- [FE] Order status management: status update modal with notes, bulk status update
+- [FE] Printable invoice template: layout, company branding, order details, print-friendly CSS
+- [BE] `PUT /api/admin/orders/:id/status` — update order status, validate transitions, add notes, log to order history (no email notifications)
+- [BE] `PUT /api/admin/orders/:id/tracking` — add/update tracking number; displayed on customer's order page
+- [BE] `GET /api/admin/orders/:id/invoice` — return structured order data for browser-based print rendering; invoice numbering system
+- [BE] Order search and filtering: by order number, customer name/email, status, date range, payment status; pagination
+- [BE] `GET /api/admin/orders/export` — export orders to CSV
+- [FE+BE] Connect order UI with status update, tracking, invoice, and export endpoints
+
+---
+
+### 4. Category Management
+
+**Goal:** Organized category hierarchy with SEO support.
+
+**Tasks:**
+
+- [FE] Build category list page (`/admin/categories`): hierarchical tree view (expand/collapse, indentation for subcategories), delete category, "Add New Category" button
+- [FE] Build category create/edit form: name, slug, parent category, description, image upload, SEO fields (meta title, meta description), display order, active/inactive toggle
+- [BE] Add `metaTitle`, `metaDescription` columns to Category schema via Prisma migration
+- [FE+BE] Connect category UI with Sprint 2 category endpoints (`GET /api/categories`, `POST /api/categories`, `PUT /api/categories/:id`, `DELETE /api/categories/:id`)
+
+---
+
+### 5. Customer Management
+
+**Goal:** Admin visibility into customer behavior and account control.
+
+**Tasks:**
+
+- [FE] Build customer list page (`/admin/customers`): search, filter by registration date, sort by name/email/total spent/total orders, CSV export
+- [FE] Build customer detail page (`/admin/customers/[id]`): profile info, order history, total spent, average order value, last order date, registered addresses, account status (active/blocked)
+- [BE] `GET /api/admin/customers` — list all users with role=customer; query params: `search`, `sort`, `order`, `page`, `limit`; response: id, name, email, phone, total_orders, total_spent, registered_at
+- [BE] `GET /api/admin/customers/:id` — customer detail: profile, saved addresses, order history summary, total_spent, average_order_value, last_order_date
+- [BE] Aggregation logic: calculate total_orders, total_spent, average_order_value per customer via DB aggregation
+- [BE] `GET /api/admin/customers/export` — export to CSV
+- [BE] `PUT /api/admin/customers/:id/status` — block or reactivate; blocked customers cannot log in
+- [FE+BE] Connect customer list with `GET /api/admin/customers` (search, sort, filter, pagination)
+- [FE+BE] Connect customer detail with `GET /api/admin/customers/:id`, including saved addresses from Sprint 3 Address API (`GET /api/users/addresses`)
+- [FE+BE] Connect block/unblock button with `PUT /api/admin/customers/:id/status`
+
+---
+
+### 6. Sales Reports & Analytics
+
+**Goal:** Data-driven sales insights by period, category, and product.
+
+**Tasks:**
+
+- [FE] Build sales report page (`/admin/reports/sales`): date range selector, summary (total sales, orders, avg order value), line/bar chart, sales by category, sales by product, CSV export
+- [FE] Build product performance report: top selling products, lowest-selling products (fewest sales)
+- [FE] Data visualization: Chart.js or Recharts (interactive, responsive charts)
+- [BE] `GET /api/admin/reports/sales` — aggregated sales by date range (daily/weekly/monthly), by category, by product
+- [BE] `GET /api/admin/reports/products` — product performance: sales count and revenue per product/category
+- [BE] Analytics logic: total revenue, order count, avg order value, revenue trends, top selling products
+- [BE] Export: CSV with Content-Disposition header
+- [BE] Filter support: date range, category, product, status
+- [FE+BE] Connect reports UI with `GET /api/admin/reports/sales` and `GET /api/admin/reports/products`
+
+---
+
+### 7. Admin Access Control (RBAC)
+
+**Goal:** Enforce role-based access and allow super admins to manage admin accounts.
+
+**Tasks:**
+
+- [BE] Add role field (customer, admin, super_admin) to User schema via Prisma migration
+- [BE] Admin authentication middleware: verify JWT, check role (admin/super_admin only for admin routes), restrict access
+- [BE] Role-based permissions: admin manages products/orders/categories; super_admin manages admin users; customer accesses customer features only
+- [BE] Admin user management endpoints:
+  - `GET /api/admin/users` — list admin/staff users (not customers)
+  - `GET /api/admin/users/:id` — get admin user detail
+  - `POST /api/admin/users` — create admin user (super_admin only)
+  - `PUT /api/admin/users/:id/role` — update role (super_admin only)
+  - `PUT /api/admin/users/:id/status` — deactivate or reactivate admin user (super_admin only)
+  - `DELETE /api/admin/users/:id` — permanently delete user (super_admin only)
+- [BE] Validation: prevent self-deactivation, prevent deactivating last super_admin
+- [BE] `AdminActivityLog` schema (id, userId, action, entity, entityId, createdAt) + Prisma migration; log all admin actions with timestamp
+- [FE] Build admin user management page (`/admin/users`): list admin users, create, deactivate, assign roles
+- [FE+BE] Verify RBAC: admin cannot access super-admin routes, customers cannot access admin routes
+
+---
+
+### 8. Site Settings
+
+**Goal:** Configurable site-wide settings without code changes.
+
+**Tasks:**
+
+- [BE] Settings schema (id, key, value, type, description) + Prisma migration
+- [BE] Settings endpoints: `GET /api/admin/settings`, `GET /api/admin/settings/:key`, `PUT /api/admin/settings/:key`; validate types, sanitize input
+- [BE] Configurable settings: site name, description, contact info, social links, shipping origin, tax rate, currency, maintenance mode toggle
+- [FE] Build settings page (`/admin/settings`): form grouped by section, save confirmation
+- [FE+BE] Connect settings UI with settings API
+
+---
+
+### 9. Responsive UI Polishing
+
+**Goal:** Smooth, touch-friendly experience on mobile and tablet across all pages.
+
+**Tasks:**
+
+- [FE] Audit all pages for responsive issues: homepage, product listing, product detail, cart, checkout, account pages, admin pages
+- [FE] Fix responsive issues: layout breaks, overlapping elements, inaccessible buttons, unreadable text
+- [FE] Touch optimization: tap targets min 44x44px, mobile-friendly forms
+- [FE] Test on 3 representative screen sizes: mobile (375px), tablet (768px), desktop (1280px)
+- [FE] Test on real devices: iOS (iPhone), Android (Samsung or equivalent popular device)
+
+---
+
+### 10. SEO Optimization
+
+**Goal:** Make store pages discoverable via search engines.
+
+**Tasks:**
+
+- [FE] SEO meta tags: unique title and meta description per page, Open Graph tags for social sharing, canonical URLs
+- [FE] Dynamic product meta tags: product name in title, description in meta, product image in OG tags
+- [FE] Structured data (Schema.org): Product schema, Breadcrumb schema
+- [FE] Generate sitemap.xml (all public pages); submit to Google Search Console after production deploy
+- [FE] Create robots.txt: allow/disallow paths, link to sitemap
+- [FE] Page speed optimization: image lazy loading, code splitting, minimize bundle size, optimize fonts
+- [FE] Google Analytics 4: track page views and purchase event (order confirmation page)
+
+---
+
+### 11. Final QA & Bug Fixing
+
+**Goal:** Ship a stable, tested application to production.
+
+**Tasks:**
+
+- [FE] Functional testing: all features end-to-end
+- [FE] Cross-browser testing: Chrome, Firefox, Safari
+- [FE] Basic accessibility check: color contrast on key UI elements, form labels and input associations
+- [FE] Performance optimization: Lighthouse audit, fix issues, optimize images, minimize JS
+- [FE+BE] End-to-end testing on staging environment
+- [FE+BE] UAT with client (focus on admin dashboard, order flow, customer listing)
+- [FE+BE] Bug fixing: prioritize by severity (P0, P1, P2), document known issues
+
+---
+
+### 12. Production Deployment
+
+**Goal:** Launch the store to a live, monitored production environment.
+
+**Tasks:**
+
+- [BE] Set up production PostgreSQL: create instance, configure credentials, run migrations, seed initial data (admin user, categories)
+- [BE] Configure production environment variables: DB connection string, JWT secret, API keys (payment, shipping, cloud storage), CORS origins, Node environment
+- [BE] Deploy to cloud platform (Railway, Render, or DigitalOcean): configure resources, Node.js runtime (process management handled by platform)
+- [BE] Production logging: Winston logger, log to external service only (Logtail, Papertrail, or Sentry), error tracking via Sentry
+- [BE] Monitoring: server health, DB, and API endpoint monitoring; alerts for critical issues
+- [BE] Backup strategy: automated DB backups, backup retention policy, test restoration
+- [BE] Rate limiting: stricter production limits, IP-based, DDoS protection
+- [BE] Security hardening: audit (auth, authorization, input validation, SQL injection, XSS, CORS), security headers (CSP, X-Frame-Options, X-Content-Type-Options, HSTS), HTTPS enforcement, request validation, security monitoring; document security practices applied
+- [FE] Deploy to Vercel: connect GitHub repo, configure build settings, set environment variables, configure custom domain
+- [FE] Configure production API endpoints: update base URL, configure CORS, test connectivity
+- [FE] SSL: verify SSL is active and HTTPS redirect works on custom domain (Vercel handles SSL automatically)
+- [FE] Domain: configure DNS records, point to Vercel, configure www redirect
+- [FE+BE] Verify checkout flow uses Sprint 3 Address API (`GET /api/users/addresses`) for saved address selection
+- [FE+BE] Smoke test on production: all critical paths (register, browse, checkout, payment, admin login, order management)
 
 ---
 
 ## 📊 Definition of Done
 
-### For Each User Story:
-- [ ] Code is written and follows project coding standards
-- [ ] Code is reviewed by at least one team member
-- [ ] Unit tests are written and passing (BE)
-- [ ] Integration tests are passing
-- [ ] Security review completed
-- [ ] API documentation is updated
-- [ ] Feature is tested on multiple browsers and devices
-- [ ] No critical bugs or security vulnerabilities
-- [ ] Code is merged to main/develop branch
+### For Each Feature
 
-### For Sprint 4 Completion:
-- [ ] Admin dashboard is fully functional
-- [ ] All admin features are working
-- [ ] Application is responsive on all devices
-- [ ] SEO is optimized
-- [ ] All bugs are fixed (P0, P1)
-- [ ] Application is deployed to production
-- [ ] Domain and SSL are configured
-- [ ] Monitoring and logging are set up
-- [ ] Documentation is complete
-- [ ] Client training is completed
-- [ ] Launch checklist is completed
-- [ ] Application is live and accessible
+- [ ] FE and BE tasks completed and tested together
+- [ ] Code reviewed by at least one team member
+- [ ] No P0 or P1 bugs
+- [ ] Code merged to main branch
+
+### For Sprint 4 Completion
+
+- [ ] All admin features working on staging
+- [ ] Application responsive on mobile and tablet
+- [ ] SEO meta tags and structured data in place
+- [ ] All P0 and P1 bugs fixed
+- [ ] Deployed to production with domain and SSL active
+- [ ] Monitoring and logging active
+- [ ] API documentation updated for all Sprint 4 endpoints
+- [ ] Client training completed
+- [ ] Pre-launch checks done: HTTPS active, payment gateway in production mode, admin account created, initial products and categories seeded
 
 ---
 
 ## 🎨 Design Guidelines
 
 ### Admin Dashboard
+
 - **Layout:** Sidebar navigation with main content area
 - **Color Scheme:** Professional, distinct from customer-facing site
 - **Typography:** Clear, readable fonts for data-heavy interfaces
-- **Data Visualization:** Clear, colorful charts and graphs
+- **Data Visualization:** Chart.js or Recharts (interactive, responsive)
 - **Tables:** Sortable, filterable, with clear actions
 - **Forms:** Well-organized, with clear labels and validation
 
 ### Responsive Design
+
 - **Mobile First:** Design for mobile, enhance for desktop
-- **Breakpoints:** 320px, 768px, 1024px, 1440px
+- **Breakpoints:** 375px (mobile), 768px (tablet), 1280px (desktop)
 - **Touch Targets:** Minimum 44x44px for mobile
-- **Navigation:** Hamburger menu on mobile, full menu on desktop
-- **Tables:** Horizontal scroll or card view on mobile
+- **Navigation:** Hamburger menu on mobile, full sidebar on desktop
 
 ---
 
 ## 🔐 Security Considerations
 
-### Admin Security
-- **Strong Authentication:** Require strong passwords for admin accounts
-- **Two-Factor Authentication:** Implement 2FA for admin accounts (optional but recommended)
-- **Session Management:** Short session timeout for admin
-- **Activity Logging:** Log all admin actions
-- **IP Whitelisting:** Restrict admin access to specific IPs (optional)
-- **Role-Based Access:** Strict role enforcement
-
-### Production Security
+- **Authentication:** Strong passwords required for admin accounts; short session timeout
+- **Authorization:** Strict RBAC enforcement; all admin endpoints role-checked
+- **Activity Logging:** All admin actions logged to `AdminActivityLog`
 - **Environment Variables:** Never commit secrets to repository
-- **HTTPS Only:** Force HTTPS in production
-- **Security Headers:** Implement all recommended security headers
-- **Rate Limiting:** Protect against brute force and DDoS
-- **Input Validation:** Validate and sanitize all inputs
-- **Error Handling:** Don't leak sensitive information in errors
-- **Database Security:** Use strong passwords, restrict access
-- **Regular Updates:** Keep all dependencies up to date
-
----
-
+- **HTTPS:** Force HTTPS in production; configure HSTS
+- **Security Headers:** CSP, X-Frame-Options, X-Content-Type-Options
+- **Rate Limiting:** Brute force and DDoS protection on all endpoints
+- **Input Validation:** Validate and sanitize all inputs; use parameterized queries
+- **Error Handling:** Do not leak sensitive information in error responses
